@@ -1,13 +1,23 @@
 :root {
-  --purple: #5624d0;
-  --purple-soft: #f2effb;
-  --ink: #2d2f31;
-  --muted: #6a6f73;
-  --line: #d1d7dc;
-  --page: #f7f9fa;
-  --white: #ffffff;
-  --mono: "DM Mono", monospace;
-  --sans: "Manrope", sans-serif;
+  color-scheme: light dark;
+
+  --serif: ui-serif, Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  --sans: ui-sans-serif, system-ui, sans-serif;
+  --mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "DejaVu Sans Mono", monospace;
+
+  --purple: light-dark(#5624d0, #b9a3f5);
+  --purple-soft: light-dark(#f2effb, #241a3d);
+  --ink: light-dark(#1a1a1a, #f2f2f2);
+  --muted: light-dark(#6a6f73, #a8adb1);
+  --line: light-dark(#d1d7dc, #3a3d40);
+  --page: light-dark(#f7f9fa, #0d0d0d);
+  --white: light-dark(#ffffff, #161617);
+  --body-text: light-dark(#33363a, #d8dade);
+  --surface-soft: light-dark(#fbfbfc, #1c1c1e);
+  --sample-bg: light-dark(#fffaf0, #2b2419);
+  --code-bg: light-dark(#eeeaf8, #2a2340);
+  --code-text: light-dark(#49209d, #d4c6fb);
 }
 
 * {
@@ -23,8 +33,21 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--page);
-  font-family: var(--sans);
+  font-family: var(--serif);
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.brand,
+.main-nav,
+.sidebar-section h2,
+.demo-group summary,
+.sidebar-links a,
+.sidebar-open,
+.breadcrumb {
+  font-family: var(--sans);
 }
 
 a {
@@ -38,9 +61,9 @@ button {
 
 code {
   padding: 0.15em 0.38em;
-  color: #49209d;
+  color: var(--code-text);
   border-radius: 3px;
-  background: #eeeaf8;
+  background: var(--code-bg);
   font-family: var(--mono);
   font-size: 0.86em;
 }
@@ -81,7 +104,7 @@ code {
   justify-content: space-between;
   min-height: 72px;
   padding: 10px clamp(20px, 4vw, 60px);
-  background: white;
+  background: var(--white);
   box-shadow: 0 2px 8px rgba(45, 47, 49, 0.13);
 }
 
@@ -171,7 +194,7 @@ main {
   color: var(--ink);
   border: 1px solid var(--line);
   border-top: 5px solid var(--purple);
-  background: white;
+  background: var(--white);
   box-shadow: 0 2px 5px rgba(45, 47, 49, 0.06);
 }
 
@@ -201,7 +224,7 @@ h1 {
 .cover > p:last-child {
   max-width: 720px;
   margin: 0;
-  color: #4a4d4f;
+  color: var(--body-text);
   font-size: 16px;
   line-height: 1.75;
 }
@@ -214,7 +237,7 @@ h1 {
   margin-top: 20px;
   padding: clamp(28px, 5vw, 48px);
   border: 1px solid var(--line);
-  background: white;
+  background: var(--white);
   box-shadow: 0 2px 5px rgba(45, 47, 49, 0.06);
 }
 
@@ -228,7 +251,7 @@ h2 {
 
 .content-section p,
 .content-section li {
-  color: #4a4d4f;
+  color: var(--body-text);
   font-size: 13px;
   line-height: 1.85;
 }
@@ -250,7 +273,7 @@ h2 {
   position: relative;
   padding: 18px 20px 18px 58px;
   border: 1px solid var(--line);
-  background: #fbfbfc;
+  background: var(--surface-soft);
   counter-increment: steps;
 }
 
@@ -281,7 +304,7 @@ h2 {
   padding: 18px 20px;
   border: 1px solid var(--line);
   border-left: 4px solid var(--purple);
-  background: #fbfbfc;
+  background: var(--surface-soft);
 }
 
 .template-list a {
@@ -291,7 +314,7 @@ h2 {
 .notice {
   margin-top: 24px;
   padding: 20px;
-  color: #4a4d4f;
+  color: var(--body-text);
   border: 1px solid #c9bdf0;
   background: var(--purple-soft);
   font-size: 12px;
@@ -302,7 +325,7 @@ h2 {
   padding: 25px;
   border: 1px solid var(--line);
   border-left: 4px solid #e59819;
-  background: #fffaf0;
+  background: var(--sample-bg);
 }
 
 .sample p {
@@ -344,7 +367,7 @@ h2 {
   border: 1px solid var(--line);
   border-left: 5px solid var(--purple);
   border-radius: 6px;
-  background: white;
+  background: var(--white);
   font-size: 19px;
   letter-spacing: -0.02em;
   box-shadow: 0 1px 3px rgba(45, 47, 49, 0.06);
@@ -362,7 +385,7 @@ h2 {
   color: var(--ink);
   border: 1px solid var(--line);
   border-radius: 4px;
-  background: white;
+  background: var(--white);
   font-size: 10px;
   line-height: 1.5;
   text-decoration: none;
@@ -381,7 +404,7 @@ h2 {
 
 .sidebar-links a.active {
   color: var(--purple);
-  border-color: #b8a4eb;
+  border-color: var(--purple);
   background: var(--purple-soft);
   font-weight: 800;
 }
@@ -398,7 +421,7 @@ h2 {
   color: var(--purple);
   border: 1px solid var(--line);
   border-radius: 4px;
-  background: white;
+  background: var(--white);
   list-style: none;
   font-size: 11px;
   font-weight: 800;
@@ -520,7 +543,7 @@ footer a {
     display: grid;
     gap: 0;
     padding: 14px 20px;
-    background: white;
+    background: var(--white);
     box-shadow: 0 5px 10px rgba(45, 47, 49, 0.12);
   }
 
