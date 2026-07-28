@@ -1,23 +1,23 @@
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
 
   --serif: ui-serif, Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
   --sans: ui-sans-serif, system-ui, sans-serif;
   --mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
     "DejaVu Sans Mono", monospace;
 
-  --purple: light-dark(#5624d0, #b9a3f5);
-  --purple-soft: light-dark(#f2effb, #241a3d);
-  --ink: light-dark(#1a1a1a, #f2f2f2);
-  --muted: light-dark(#6a6f73, #a8adb1);
-  --line: light-dark(#d1d7dc, #3a3d40);
-  --page: light-dark(#f7f9fa, #0d0d0d);
-  --white: light-dark(#ffffff, #161617);
-  --body-text: light-dark(#33363a, #d8dade);
-  --surface-soft: light-dark(#fbfbfc, #1c1c1e);
-  --sample-bg: light-dark(#fffaf0, #2b2419);
-  --code-bg: light-dark(#eeeaf8, #2a2340);
-  --code-text: light-dark(#49209d, #d4c6fb);
+  --purple: #5624d0;
+  --purple-soft: #f2effb;
+  --ink: #1a1a1a;
+  --muted: #6a6f73;
+  --line: #d1d7dc;
+  --page: #f7f9fa;
+  --white: #ffffff;
+  --body-text: #33363a;
+  --surface-soft: #fbfbfc;
+  --sample-bg: #fffaf0;
+  --code-bg: #eeeaf8;
+  --code-text: #49209d;
 }
 
 * {
