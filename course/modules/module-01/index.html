@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en-us" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Module 1 — Basic Concepts &#43; AI as Co-programmer – ISC5305 — Agentic Scientific C&#43;&#43;</title>
+<link rel="alternate" type="application/rss+xml" title="rss" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/modules/module-01/index.xml">
+
+<meta name="created" content="0001-01-01T00:00:00+0000">
+<meta name="modified" content="0001-01-01T00:00:00+0000">
+
+
+<meta property="og:site_name" content="ISC5305 — Agentic Scientific C&#43;&#43;">
+<meta property="og:title" content="Module 1 — Basic Concepts &#43; AI as Co-programmer">
+<meta property="og:url" content="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/modules/module-01/">
+<meta property="og:type" content="website">
+
+<meta name="generator" content="Hugo 0.161.1">
+
+
+
+<link rel="canonical" href="index.html">
+
+<link rel="apple-touch-icon" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/apple-touch-icon.png">
+
+<link rel="stylesheet" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/css/styles.16bb606e4f4b351496e181343a82d9406712f65dac2469ea8b1cdceaeef54498.css" integrity="sha256-Frtgbk9LNRSW4YE0OoLZQGcS9l2sJGnqixzc6u71RJg=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/css/mobilemenu.min.2a3448b79abf7c38a16ca3d141bdb684f8f6c6e3ec0dbc97343a095188204886.css" integrity="sha256-KjRIt5q/fDihbKPRQb22hPj2xuPsDbyXNDoJUYggSIY=" crossorigin="anonymous" media="screen">
+<link rel="stylesheet" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/css/print.min.6a072d1ee9f0c99668a784c9bc55f9b97142f6d7b4b408ec2b8aeeaf8903d65a.css" integrity="sha256-agctHunwyZZop4TJvFX5uXFC9te0tAjsK4rur4kD1lo=" crossorigin="anonymous" media="print">
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url" : "https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/modules/module-01/",
+    "name": "Module 1 — Basic Concepts + AI as Co-programmer",
+    "description": "Course website — scientific C++ with AI as a critiqued collaborator, not an oracle.",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ISC5305 — Agentic Scientific C++",
+      "url": "https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/"
+    }
+  }
+</script>
+
+<script>
+(()=>{(function(){document.querySelector("html").classList.replace("nojs","js")})();})();
+
+</script>
+
+<script defer src="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/js/mobilemenu.7ce1f75fd1d49cd683a008352ad9001f800349629be01d531a19c02b5a84817b.js"></script>
+<script defer src="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/js/script.f2979a93a325fecf9605263bd141398a311c8e23388ed7dcff74f92f7e632866.js"></script>
+
+
+
+<link rel="stylesheet" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/css/custom.css">
+<script src="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/js/thisweek.js" defer></script>
+
+
+<link rel="stylesheet" href="../../student-theme.css">
+</head>
+
+<body class="list-page section-page--modules">
+<div class="page layout__page layout__sidebar-second">
+<header class="header layout__header">
+<h1 class="header__site-name">
+<a href="../../index.html" title="Home" class="header__site-link" rel="home"><span>ISC5305 — Agentic Scientific C&#43;&#43;</span></a>
+</h1>
+<div class="region header__region">
+</div>
+</header>
+
+<nav class="main-menu mx--xs layout__navigation" aria-label="Main menu">
+<ul class="flex-inline mx--0">
+<li><a href="../../index.html"><span>Home</span></a></li>
+<li><a href="../index.html" aria-current="page"><span>Modules</span></a></li>
+<li><a href="../../demos/index.html"><span>Demos</span></a></li>
+<li><a href="../../assessments/index.html"><span>Assessments</span></a></li>
+<li><a href="../../resources/index.html"><span>Resources</span></a></li>
+<li><a href="../../search/index.html"><span>Search</span></a></li>
+</ul>
+</nav>
+<div class="mobile-nav" dir="ltr" hidden>
+  <div class="mobile-nav__cover"></div>
+  <button class="mobile-nav__toggle button" aria-expanded="false" aria-controls="sheet">
+    Menu
+    <svg class="mobile-nav__hamburger" viewBox="0 0 100 100" focusable="false" aria-hidden="true">
+      <rect width="80" height="12" x="10" y="20" rx="5"></rect>
+      <rect width="80" height="12" x="10" y="45" rx="5"></rect>
+      <rect width="80" height="12" x="10" y="70" rx="5"></rect>
+    </svg>
+  </button>
+  <div class="mobile-nav__sheet link-nav" id="sheet" data-theme="dark" aria-hidden="true">
+    <div class="mobile-nav__region"></div>
+    <nav class="mobile-nav__main-menu" aria-label="Main menu">
+    <ul class="mobile-nav__navbar">
+    <li><a href="../../index.html"><span>Home</span></a></li>
+    <li><a href="../index.html" aria-current="page"><span>Modules</span></a></li>
+    <li><a href="../../demos/index.html"><span>Demos</span></a></li>
+    <li><a href="../../assessments/index.html"><span>Assessments</span></a></li>
+    <li><a href="../../resources/index.html"><span>Resources</span></a></li>
+    <li><a href="../../search/index.html"><span>Search</span></a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+<main class="main layout__main">
+<header>
+<h1 class="title">Module 1 — Basic Concepts &#43; AI as Co-programmer</h1>
+</header>
+
+<div class="module">
+<p><em>Thu Aug. 27 → Tue Sep. 1</em></p>
+<h2 id="lesson-1--thu-aug-27--norms-the-first-ai-code-review">Lesson 1 · Thu Aug. 27 — norms, the first AI code review</h2>
+<ul>
+<li><strong>Topic:</strong> The course loop and the 5-part review checklist, applied to an AI-generated trapezoid integrator.</li>
+<li><strong>Demo:</strong> <a class="demo-link" href="../../rail/agentic_spec.html">▶&nbsp;agentic_spec</a>
+</li>
+<li><strong>In-class kit:</strong> <a href="kit/index.html">flawed-trapezoid review kit</a> — the prompt plus two captured replies.</li>
+<li><strong>Slides:</strong> <a href="slides/index.html">Module 1 slides</a></li>
+<li><strong>Artifact:</strong> 3+ issues found across the routine, plus 3–5 hand-written tests.</li>
+<li><strong>Assessment:</strong> <a href="../../assessments/hw1/index.html">HW1 Part A assigned</a> — everything Part A needs is taught today. Part B follows Thu Sep. 3; both are due Tue Sep. 8.</li>
+</ul>
+<h2 id="lesson-2--tue-sep-1--the-ai-contract-two-implementations-first-measurements">Lesson 2 · Tue Sep. 1 — the AI contract, two implementations, first measurements</h2>
+<ul>
+<li><strong>Topic:</strong> The read–test–measure AI contract, the error policy, and &ldquo;what a test is&rdquo; — comparing a hand loop vs <code>std::accumulate</code> with <code>std::chrono</code> timings.</li>
+<li><strong>Artifact:</strong> A merge write-up plus a refined prompt for the same task.</li>
+</ul>
+
+</div>
+</main>
+
+
+<aside class="sidebar layout__second-sidebar">
+<nav class="menu">
+<p class="title"><strong><a href="../../assessments/index.html">Assessments</a></strong></p>
+<ul>
+<li><a href="../../assessments/transcripts/index.html">AI transcripts</a></li>
+<li><a href="../../assessments/rubric/index.html">Homework rubric</a></li>
+<li><a href="../../assessments/quiz-calculator/index.html">Quiz score calculator</a></li>
+<li><a href="../../assessments/hw1/index.html">HW1 — The AI contract, practiced once</a></li>
+<li><a href="../../assessments/quiz-1/index.html">Quiz 1</a></li>
+<li><a href="../../assessments/quiz-2/index.html">Quiz 2</a></li>
+<li><a href="../../assessments/quiz-3/index.html">Quiz 3</a></li>
+<li><a href="../../assessments/quiz-4/index.html">Quiz 4</a></li>
+<li><a href="../../assessments/dossier/index.html">AI-Disclosure Dossier</a></li>
+</ul>
+</nav>
+<nav class="menu demo-library">
+<p class="title"><strong><a href="../../demos/index.html">Demo Library</a></strong></p>
+<details class="demo-group">
+<summary>Agentic demos <span class="demo-count">(12)</span></summary>
+<ul>
+<li>
+<a href="../../demos/ag_context/index.html">ag_context</a>
+<span class="demo-desc">The model answers the context, not the prompt; the context inventory.</span>
+</li>
+<li>
+<a href="../../demos/ag_diff/index.html">ag_diff</a>
+<span class="demo-desc">Review the change not the file: regression/feature halves, edge table.</span>
+</li>
+<li>
+<a href="../../demos/ag_evidence/index.html">ag_evidence</a>
+<span class="demo-desc">The four-gate evidence ladder (compiles/runs/battery/ASan).</span>
+</li>
+<li>
+<a href="../../demos/ag_explain/index.html">ag_explain</a>
+<span class="demo-desc">Explanations are unverified commitments; check them against the run.</span>
+</li>
+<li>
+<a href="../../demos/ag_grounding/index.html">ag_grounding</a>
+<span class="demo-desc">Ungrounded vs grounded (real header pasted in).</span>
+</li>
+<li>
+<a href="../../demos/ag_hallucination/index.html">ag_hallucination</a>
+<span class="demo-desc">The compiler as first honesty gate: invented refs, stale APIs.</span>
+</li>
+<li>
+<a href="../../demos/ag_models/index.html">ag_models</a>
+<span class="demo-desc">Same prompt x six local tiers x three frameworks; which gate stops each.</span>
+</li>
+<li>
+<a href="../../demos/ag_numverify/index.html">ag_numverify</a>
+<span class="demo-desc">Numerically-wrong-but-green; cancellation; the oracle is part of the test.</span>
+</li>
+<li>
+<a href="../../demos/ag_pipeline/index.html">ag_pipeline</a>
+<span class="demo-desc">The first agentic pipeline as a recorded replay: build/test/feedback loop.</span>
+</li>
+<li>
+<a href="../../demos/ag_repair/index.html">ag_repair</a>
+<span class="demo-desc">Directing a repair: vague vs directed, what-must-not-change clauses.</span>
+</li>
+<li>
+<a href="../../demos/ag_testgate/index.html">ag_testgate</a>
+<span class="demo-desc">Same code, weak vs strong battery; green is a property of the tests.</span>
+</li>
+<li>
+<a href="../../demos/agentic_spec/index.html">agentic_spec</a>
+<span class="demo-desc">Vague prompt vs spec-grade prompt; a prompt is a specification.</span>
+</li>
+</ul>
+</details>
+<details class="demo-group">
+<summary>Foundations <span class="demo-count">(13)</span></summary>
+<ul>
+<li>
+<a href="../../demos/array_pointer/index.html">array_pointer</a>
+<span class="demo-desc">Array-to-pointer decay, std::array/span, off-the-end pointer.</span>
+</li>
+<li>
+<a href="../../demos/benchmarking/index.html">benchmarking</a>
+<span class="demo-desc">Timing done right; the optimizer deletes your benchmark; cache effects.</span>
+</li>
+<li>
+<a href="../../demos/compile_time/index.html">compile_time</a>
+<span class="demo-desc">if constexpr, SFINAE/enable_if, concepts, static_assert.</span>
+</li>
+<li>
+<a href="../../demos/debugging/index.html">debugging</a>
+<span class="demo-desc">Reading a sanitizer report; assert vs exception vs silent; UB.</span>
+</li>
+<li>
+<a href="../../demos/function_args/index.html">function_args</a>
+<span class="demo-desc">Pass by value/pointer/reference, const&amp;, move, RVO.</span>
+</li>
+<li>
+<a href="../../demos/list_ops/index.html">list_ops</a>
+<span class="demo-desc">Linked-list pointer mechanics: insert/erase/splice, iterator validity.</span>
+</li>
+<li>
+<a href="../../demos/numerics/index.html">numerics</a>
+<span class="demo-desc">Floating-point behavior: tolerances, cancellation, abs vs rel error.</span>
+</li>
+<li>
+<a href="../../demos/ownership/index.html">ownership</a>
+<span class="demo-desc">The four ownership relationships; RAII enforces ownership.</span>
+</li>
+<li>
+<a href="../../demos/pointers_basic/index.html">pointers_basic</a>
+<span class="demo-desc">References vs pointers, nullptr, dangling/null gotchas.</span>
+</li>
+<li>
+<a href="../../demos/smart_pointers/index.html">smart_pointers</a>
+<span class="demo-desc">unique/shared/weak_ptr, make_*, ownership and double-free.</span>
+</li>
+<li>
+<a href="../../demos/stackframes/index.html">stackframes</a>
+<span class="demo-desc">Stack vs heap vs static lifetime; recursion frames.</span>
+</li>
+<li>
+<a href="../../demos/strings/index.html">strings</a>
+<span class="demo-desc">std::string value semantics, SSO, string_view borrowing and dangle.</span>
+</li>
+<li>
+<a href="../../demos/type_deduction/index.html">type_deduction</a>
+<span class="demo-desc">auto drops ref/const, range-for copy mistake, decltype(auto).</span>
+</li>
+</ul>
+</details>
+<details class="demo-group">
+<summary>OOP <span class="demo-count">(12)</span></summary>
+<ul>
+<li>
+<a href="../../demos/class_structure/index.html">class_structure</a>
+<span class="demo-desc">Buffer anchor: ctors, deep vs shallow copy (ASan), move ops, dtor.</span>
+</li>
+<li>
+<a href="../../demos/custom_iterators/index.html">custom_iterators</a>
+<span class="demo-desc">A minimal forward iterator that works with STL algorithms.</span>
+</li>
+<li>
+<a href="../../demos/custom_types/index.html">custom_types</a>
+<span class="demo-desc">Hashable/comparable/movable/streamable value types; explicit ctors.</span>
+</li>
+<li>
+<a href="../../demos/exceptions/index.html">exceptions</a>
+<span class="demo-desc">throw/try/catch, catch-by-ref, RAII unwinding, noexcept.</span>
+</li>
+<li>
+<a href="../../demos/functional/index.html">functional</a>
+<span class="demo-desc">Four callables under one signature; std::function type erasure.</span>
+</li>
+<li>
+<a href="../../demos/inheritance/index.html">inheritance</a>
+<span class="demo-desc">is-a, virtual dispatch, slicing, override, non-virtual-dtor gotcha.</span>
+</li>
+<li>
+<a href="../../demos/lambdas/index.html">lambdas</a>
+<span class="demo-desc">Capture by value/ref, mutable, predicates, dangling-capture gotcha.</span>
+</li>
+<li>
+<a href="../../demos/nested_containers/index.html">nested_containers</a>
+<span class="demo-desc">Matrix as vector-of-vectors / flat / sparse (map vs CSR).</span>
+</li>
+<li>
+<a href="../../demos/op_overload/index.html">op_overload</a>
+<span class="demo-desc">Vec2 anchor: arithmetic, comparison, iostream, const-correctness.</span>
+</li>
+<li>
+<a href="../../demos/stl/index.html">stl</a>
+<span class="demo-desc">Containers, iterators, algorithms-over-loops, iterator invalidation.</span>
+</li>
+<li>
+<a href="../../demos/templates/index.html">templates</a>
+<span class="demo-desc">Type params, deduction, specialization, header-visibility gotcha, CTAD.</span>
+</li>
+<li>
+<a href="../../demos/testing/index.html">testing</a>
+<span class="demo-desc">Writing a C&#43;&#43; test: boundary/value tests, tolerances, regression.</span>
+</li>
+</ul>
+</details>
+</nav>
+
+<nav class="menu">
+<p class="title"><strong><a href="../index.html" aria-current="page">Modules</a></strong></p>
+<ul class="module-orientation"><li><a href="../orientation/index.html">Orientation</a></li></ul>
+<details class="module-group">
+<summary>Modules 1–8 · AI-assisted</summary>
+<ul>
+<li><a href="index.html" aria-current="page">Module 1 — Basic Concepts &#43; AI as Co-programmer</a></li>
+<li><a href="../module-02/index.html">Module 2 — OOP Basics &#43; Critiquing AI-Generated Classes</a></li>
+<li><a href="../module-03/index.html">Module 3 — Memory Management &#43; Ownership</a></li>
+<li><a href="../module-04/index.html">Module 4 — Advanced OOP &#43; Value Semantics as Policy</a></li>
+<li><a href="../module-05/index.html">Module 5 — STL I: Containers</a></li>
+<li><a href="../module-06/index.html">Module 6 — Templates &amp; Generic Programming</a></li>
+<li><a href="../module-07/index.html">Module 7 — STL II: Algorithms</a></li>
+<li><a href="../module-08/index.html">Module 8 — Algorithms &amp; Data Structures &#43; Agent-Aware Design</a></li>
+</ul>
+</details>
+<details class="module-group">
+<summary>Modules 9–14 · Agentic pipelines</summary>
+<ul>
+<li><a href="../module-09/index.html">Module 9 — First Agentic Pipeline</a></li>
+<li><a href="../module-10/index.html">Module 10 — Modern C&#43;&#43; I &#43; the Modernization Agent</a></li>
+<li><a href="../module-11/index.html">Module 11 — Modern C&#43;&#43; II &#43; Coding-Agent Architecture</a></li>
+<li><a href="../module-12/index.html">Module 12 — Testing, CI Mindset, Agent-Driven Refactoring</a></li>
+<li><a href="../module-13/index.html">Module 13 — Debugging, Guardrails, Failure-Aware Agents</a></li>
+<li><a href="../module-14/index.html">Module 14 — Synthesis and Review</a></li>
+</ul>
+</details>
+</nav>
+
+<nav class="menu">
+<p class="title"><strong><a href="../../resources/index.html">Resources</a></strong></p>
+<ul>
+<li><a href="../../resources/git-workflow/index.html">The minimal-git workflow</a></li>
+</ul>
+</nav>
+</aside>
+<footer class="footer layout__footer mt--l">
+<p><span>© ISC5305 — Agentic Scientific C&#43;&#43;</span></p>
+
+
+
+</footer>
+
+</div>
+</body>
+</html>

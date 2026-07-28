@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --student-purple: #5624d0;
+  --student-purple-soft: #f2effb;
+  --student-ink: #2d2f31;
+  --student-muted: #6a6f73;
+  --student-line: #d1d7dc;
+  --student-page: #f7f9fa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 !important;
+  color: var(--student-ink) !important;
+  background: var(--student-page) !important;
+  font-family: "Manrope", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page.layout__page {
+  display: grid !important;
+  grid-template:
+    "header" auto
+    "navigation" auto
+    "main" 1fr
+    "footer" auto / minmax(0, 1fr) !important;
+  min-height: 100vh;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.layout__header {
+  grid-area: header !important;
+}
+
+.layout__navigation {
+  grid-area: navigation !important;
+}
+
+.layout__main {
+  grid-area: main !important;
+}
+
+.layout__footer {
+  grid-area: footer !important;
+}
+
+/* The original global directory was repeated on every page. Top navigation
+   remains available, while each page now focuses on its own unchanged content. */
+.layout__second-sidebar {
+  display: none !important;
+}
+
+.header.layout__header {
+  position: relative;
+  z-index: 5;
+  display: flex !important;
+  align-items: center;
+  min-height: 72px;
+  padding: 0 clamp(22px, 5vw, 72px) !important;
+  color: var(--student-ink) !important;
+  background: white !important;
+  border: 0 !important;
+  box-shadow: 0 2px 8px rgba(45, 47, 49, 0.12);
+}
+
+.header__site-name {
+  margin: 0 !important;
+  font-size: 0 !important;
+}
+
+.header__site-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--student-ink) !important;
+  text-decoration: none !important;
+}
+
+.header__site-link::before {
+  content: "C++";
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: white;
+  background: var(--student-purple);
+  font: 700 11px "DM Mono", monospace;
+}
+
+.header__site-link span {
+  font-size: 14px !important;
+  font-weight: 800;
+}
+
+.main-menu.layout__navigation {
+  position: sticky;
+  z-index: 4;
+  top: 0;
+  margin: 0 !important;
+  padding: 0 clamp(22px, 5vw, 72px) !important;
+  background: white;
+  border-top: 1px solid #eceef0;
+  border-bottom: 1px solid var(--student-line);
+}
+
+.main-menu > ul {
+  display: flex !important;
+  align-items: center;
+  gap: 4px;
+  max-width: 1180px;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.main-menu li {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.main-menu a {
+  display: block;
+  padding: 15px 17px !important;
+  color: var(--student-ink) !important;
+  border: 0 !important;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.main-menu a:hover {
+  color: var(--student-purple) !important;
+  background: var(--student-purple-soft);
+}
+
+.main-menu a[aria-current="page"] {
+  color: white !important;
+  background: var(--student-purple) !important;
+}
+
+.main.layout__main {
+  width: min(100% - 40px, 1050px) !important;
+  margin: 34px auto 70px !important;
+  padding: clamp(28px, 5vw, 58px) !important;
+  background: white;
+  border: 1px solid var(--student-line);
+  box-shadow: 0 3px 12px rgba(45, 47, 49, 0.06);
+}
+
+.main > header:first-child,
+.main article > header:first-child {
+  margin: calc(clamp(28px, 5vw, 58px) * -1) calc(clamp(28px, 5vw, 58px) * -1) 36px !important;
+  padding: clamp(34px, 6vw, 64px) clamp(28px, 5vw, 58px) !important;
+  color: white;
+  background: #1c1d1f;
+}
+
+.main h1.title {
+  margin: 0 !important;
+  color: inherit !important;
+  font-size: clamp(36px, 6vw, 62px) !important;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.main h2 {
+  margin-top: 2.2em;
+  padding-bottom: 0.35em;
+  color: var(--student-ink);
+  border-bottom: 3px solid var(--student-purple);
+  font-size: clamp(23px, 3vw, 32px);
+}
+
+.main h3 {
+  margin-top: 1.8em;
+  color: var(--student-ink);
+}
+
+.main p,
+.main li {
+  color: #4a4d4f;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.main a {
+  color: var(--student-purple);
+  text-underline-offset: 3px;
+}
+
+.main code {
+  padding: 0.15em 0.38em;
+  color: #49209d;
+  border-radius: 3px;
+  background: #eeeaf8;
+  font-family: "DM Mono", monospace;
+}
+
+.main pre {
+  overflow-x: auto;
+  padding: 20px;
+  color: #f7f7f7;
+  background: #1c1d1f;
+  border-radius: 4px;
+}
+
+.main pre code {
+  padding: 0;
+  color: inherit;
+  background: transparent;
+}
+
+.main table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.main th,
+.main td {
+  padding: 11px 13px;
+  border: 1px solid var(--student-line);
+  text-align: left;
+}
+
+.main th {
+  background: var(--student-purple-soft);
+}
+
+.main blockquote,
+.main .notice,
+.main .quiz-meta {
+  margin: 24px 0;
+  padding: 18px 20px;
+  border-left: 4px solid var(--student-purple);
+  background: var(--student-purple-soft);
+}
+
+.main .quiz-meta {
+  font-weight: 600;
+}
+
+.main .module > ul,
+.main .single-view > ul {
+  padding: 18px 22px 18px 42px;
+  border: 1px solid var(--student-line);
+  background: #fbfbfc;
+}
+
+.main .demo-link {
+  display: inline-block;
+  padding: 5px 9px;
+  color: white !important;
+  background: var(--student-purple);
+  text-decoration: none;
+}
+
+/* Listing pages become compact student-friendly cards. */
+.main .view,
+.main .list-view,
+.main article + article {
+  margin-top: 14px;
+  padding: 20px;
+  border: 1px solid var(--student-line);
+  background: #fbfbfc;
+}
+
+.main .view:hover,
+.main .list-view:hover {
+  border-color: #b29be9;
+}
+
+.footer.layout__footer {
+  min-height: 90px;
+  padding: 30px clamp(22px, 5vw, 72px) !important;
+  color: #d1d7dc !important;
+  background: #1c1d1f !important;
+}
+
+.footer a {
+  color: #cec0fc !important;
+}
+
+@media (max-width: 760px) {
+  .header.layout__header {
+    min-height: 64px;
+    padding: 0 18px !important;
+  }
+
+  .header__site-link span {
+    font-size: 11px !important;
+  }
+
+  .main-menu.layout__navigation {
+    display: none !important;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
+  .main.layout__main {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 28px 22px 50px !important;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .main > header:first-child,
+  .main article > header:first-child {
+    margin: -28px -22px 28px !important;
+    padding: 38px 22px !important;
+  }
+
+  .main h1.title {
+    font-size: 38px !important;
+  }
+}

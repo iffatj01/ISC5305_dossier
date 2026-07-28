@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en-us" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>ISC5305 — Agentic Scientific C&#43;&#43;</title>
+<link rel="alternate" type="application/rss+xml" title="rss" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/index.xml">
+<meta name="description" content="Scientific C&#43;&#43; with AI as a critiqued collaborator, not an oracle.">
+<meta name="created" content="0001-01-01T00:00:00+0000">
+<meta name="modified" content="0001-01-01T00:00:00+0000">
+
+
+<meta property="og:site_name" content="ISC5305 — Agentic Scientific C&#43;&#43;">
+<meta property="og:title" content="ISC5305 — Agentic Scientific C&#43;&#43;">
+<meta property="og:url" content="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/">
+<meta property="og:type" content="website">
+
+<meta name="generator" content="Hugo 0.161.1">
+
+
+
+<link rel="canonical" href="../../index.html">
+
+<link rel="apple-touch-icon" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/apple-touch-icon.png">
+
+<link rel="stylesheet" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/css/styles.16bb606e4f4b351496e181343a82d9406712f65dac2469ea8b1cdceaeef54498.css" integrity="sha256-Frtgbk9LNRSW4YE0OoLZQGcS9l2sJGnqixzc6u71RJg=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/css/mobilemenu.min.2a3448b79abf7c38a16ca3d141bdb684f8f6c6e3ec0dbc97343a095188204886.css" integrity="sha256-KjRIt5q/fDihbKPRQb22hPj2xuPsDbyXNDoJUYggSIY=" crossorigin="anonymous" media="screen">
+<link rel="stylesheet" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/css/print.min.6a072d1ee9f0c99668a784c9bc55f9b97142f6d7b4b408ec2b8aeeaf8903d65a.css" integrity="sha256-agctHunwyZZop4TJvFX5uXFC9te0tAjsK4rur4kD1lo=" crossorigin="anonymous" media="print">
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url" : "https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/",
+    "name": "ISC5305 — Agentic Scientific C++",
+    "description": "Scientific C++ with AI as a critiqued collaborator, not an oracle.",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ISC5305 — Agentic Scientific C++",
+      "url": "https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/"
+    }
+  }
+</script>
+
+<script>
+(()=>{(function(){document.querySelector("html").classList.replace("nojs","js")})();})();
+
+</script>
+
+<script defer src="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/js/mobilemenu.7ce1f75fd1d49cd683a008352ad9001f800349629be01d531a19c02b5a84817b.js"></script>
+<script defer src="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/js/script.f2979a93a325fecf9605263bd141398a311c8e23388ed7dcff74f92f7e632866.js"></script>
+
+
+
+<link rel="stylesheet" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/css/custom.css">
+<script src="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/js/thisweek.js" defer></script>
+
+
+<link rel="stylesheet" href="../../student-theme.css">
+</head>
+
+<body class="list-page front">
+<div class="page layout__page layout__sidebar-second">
+<header class="header layout__header">
+<h1 class="header__site-name">
+<a href="../../index.html" title="Home" class="header__site-link" rel="home"><span>ISC5305 — Agentic Scientific C&#43;&#43;</span></a>
+</h1>
+<div class="region header__region">
+</div>
+</header>
+
+<nav class="main-menu mx--xs layout__navigation" aria-label="Main menu">
+<ul class="flex-inline mx--0">
+<li><a href="../../index.html" aria-current="page"><span>Home</span></a></li>
+<li><a href="../../modules/index.html"><span>Modules</span></a></li>
+<li><a href="../../demos/index.html"><span>Demos</span></a></li>
+<li><a href="../../assessments/index.html"><span>Assessments</span></a></li>
+<li><a href="../../resources/index.html"><span>Resources</span></a></li>
+<li><a href="../../search/index.html"><span>Search</span></a></li>
+</ul>
+</nav>
+<div class="mobile-nav" dir="ltr" hidden>
+  <div class="mobile-nav__cover"></div>
+  <button class="mobile-nav__toggle button" aria-expanded="false" aria-controls="sheet">
+    Menu
+    <svg class="mobile-nav__hamburger" viewBox="0 0 100 100" focusable="false" aria-hidden="true">
+      <rect width="80" height="12" x="10" y="20" rx="5"></rect>
+      <rect width="80" height="12" x="10" y="45" rx="5"></rect>
+      <rect width="80" height="12" x="10" y="70" rx="5"></rect>
+    </svg>
+  </button>
+  <div class="mobile-nav__sheet link-nav" id="sheet" data-theme="dark" aria-hidden="true">
+    <div class="mobile-nav__region"></div>
+    <nav class="mobile-nav__main-menu" aria-label="Main menu">
+    <ul class="mobile-nav__navbar">
+    <li><a href="../../index.html" aria-current="page"><span>Home</span></a></li>
+    <li><a href="../../modules/index.html"><span>Modules</span></a></li>
+    <li><a href="../../demos/index.html"><span>Demos</span></a></li>
+    <li><a href="../../assessments/index.html"><span>Assessments</span></a></li>
+    <li><a href="../../resources/index.html"><span>Resources</span></a></li>
+    <li><a href="../../search/index.html"><span>Search</span></a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+<main class="main layout__main">
+<p>This course treats AI as a <strong>regular collaborator in scientific C++ programming — not
+a source of authority</strong>. You will write precise specifications, inspect AI-generated
+code critically, design tests, measure behavior, and gradually build more structured
+AI-assisted and agentic workflows.</p>
+<section class="thisweek" data-thisweek
+         data-term-start="2026-08-25"
+         data-term-end="2026-12-03">
+<h2 class="thisweek__title">What to Do This Week</h2><article class="thisweek__card" data-key="0-1" data-date="2026-08-25" hidden>
+<h3 class="thisweek__module"><a href="../../modules/orientation/index.html">Orientation</a></h3>
+<p class="thisweek__next"><strong>Lesson 1 · <time datetime="2026-08-25">Tue Aug. 25</time></strong> — the course, the policy, the room</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Artifact</span>None. Nothing is handed in for orientation.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/orientation/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="1-1" data-date="2026-08-27" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-01/index.html">Module 1 — Basic Concepts + AI as Co-programmer</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-09-01">Lesson 2 · Tue Sep. 1 — the AI contract, two implementations, first measurements</p>
+<p class="thisweek__next"><strong>Lesson 1 · <time datetime="2026-08-27">Thu Aug. 27</time></strong> — norms, the first AI code review</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/agentic_spec.html">▶&nbsp;agentic_spec</a></li>
+<li><span class="thisweek__label">In-class kit</span><a href="../../modules/module-01/kit/index.html">flawed-trapezoid review kit</a></li>
+<li><span class="thisweek__label">Slides</span><a href="../../modules/module-01/slides/index.html">Module 1 slides</a></li>
+<li><span class="thisweek__label">Artifact</span>3+ issues found across the routine, plus 3–5 hand-written tests.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-01/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="1-2" data-date="2026-09-01" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-01/index.html">Module 1 — Basic Concepts + AI as Co-programmer</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-08-27">Lesson 1 · Thu Aug. 27 — norms, the first AI code review</p>
+<p class="thisweek__next"><strong>Lesson 2 · <time datetime="2026-09-01">Tue Sep. 1</time></strong> — the AI contract, two implementations, first measurements</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Artifact</span>A merge write-up plus a refined prompt for the same task.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-01/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="2-1" data-date="2026-09-03" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-02/index.html">Module 2 — OOP Basics + Critiquing AI-Generated Classes</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-09-08">Lesson 2 · Tue Sep. 8 — green is a property of the tests</p>
+<p class="thisweek__next"><strong>Lesson 1 · <time datetime="2026-09-03">Thu Sep. 3</time></strong> — the class-design rubric</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/class_structure.html">▶&nbsp;class_structure</a></li>
+<li><span class="thisweek__label">In-class kit</span><a href="../../modules/module-02/handout/index.html">minimal-git handout</a></li>
+<li><span class="thisweek__label">Slides</span><a href="../../modules/module-02/slides/index.html">Module 2 slides</a></li>
+<li><span class="thisweek__label">Reading</span>the stackframes, function_args, and testing demos</li>
+<li><span class="thisweek__label">Artifact</span>A rubric score plus a semantics-preserving repair prompt.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-02/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="2-2" data-date="2026-09-08" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-02/index.html">Module 2 — OOP Basics + Critiquing AI-Generated Classes</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-09-03">Lesson 1 · Thu Sep. 3 — the class-design rubric</p>
+<p class="thisweek__next"><strong>Lesson 2 · <time datetime="2026-09-08">Tue Sep. 8</time></strong> — green is a property of the tests</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/ag_testgate.html">▶&nbsp;ag_testgate</a></li>
+<li><span class="thisweek__label">Artifact</span>A 3–5 item testable-invariants checklist for the repaired class.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-02/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="3-1" data-date="2026-09-10" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-03/index.html">Module 3 — Memory Management + Ownership</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-09-15">Lesson 2 · Tue Sep. 15 — sanitizers, and the refactor</p>
+<p class="thisweek__next"><strong>Lesson 1 · <time datetime="2026-09-10">Thu Sep. 10</time></strong> — RAII and the Rule of 0</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/smart_pointers.html">▶&nbsp;smart_pointers</a></li>
+<li><span class="thisweek__label">Reading</span>Examples 1–2 of the smart_pointers demo</li>
+<li><span class="thisweek__label">Artifact</span>Ownership-violation annotations on the AI class.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-03/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="3-2" data-date="2026-09-15" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-03/index.html">Module 3 — Memory Management + Ownership</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-09-10">Lesson 1 · Thu Sep. 10 — RAII and the Rule of 0</p>
+<p class="thisweek__next"><strong>Lesson 2 · <time datetime="2026-09-15">Tue Sep. 15</time></strong> — sanitizers, and the refactor</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/debugging.html">▶&nbsp;debugging</a></li>
+<li><span class="thisweek__label">Artifact</span>An &ldquo;ownership checks I always run on AI code&rdquo; checklist.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-03/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="4-1" data-date="2026-09-17" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-04/index.html">Module 4 — Advanced OOP + Value Semantics as Policy</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-09-22">Lesson 2 · Tue Sep. 22 — prompts as design policy</p>
+<p class="thisweek__next"><strong>Lesson 1 · <time datetime="2026-09-17">Thu Sep. 17</time></strong> — Rule of 0/3/5, copy and move</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/class_structure.html">▶&nbsp;class_structure</a> · <a class="demo-link" href="../../rail/op_overload.html">▶&nbsp;op_overload</a></li>
+<li><span class="thisweek__label">Reading</span>the inheritance and op_overload demos</li>
+<li><span class="thisweek__label">Artifact</span><code>Matrix</code> semantic-bug tests (copy-after-move, self-assignment, aliasing), started.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-04/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="4-2" data-date="2026-09-22" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-04/index.html">Module 4 — Advanced OOP + Value Semantics as Policy</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-09-17">Lesson 1 · Thu Sep. 17 — Rule of 0/3/5, copy and move</p>
+<p class="thisweek__next"><strong>Lesson 2 · <time datetime="2026-09-22">Tue Sep. 22</time></strong> — prompts as design policy</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/ag_repair.html">▶&nbsp;ag_repair</a></li>
+<li><span class="thisweek__label">Quiz</span><a href="../../assessments/quiz-1/index.html">Quiz 1</a> — first 15 minutes of class</li>
+<li><span class="thisweek__label">Artifact</span>Captured policy-enforcing prompt patterns (proto-rules).</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-04/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="5-1" data-date="2026-09-24" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-05/index.html">Module 5 — STL I: Containers</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-09-29">Lesson 2 · Tue Sep. 29 — hallucination and its cure</p>
+<p class="thisweek__next"><strong>Lesson 1 · <time datetime="2026-09-24">Thu Sep. 24</time></strong> — containers, and a confident explanation checked</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/stl.html">▶&nbsp;stl</a> · <a class="demo-link" href="../../rail/ag_explain.html">▶&nbsp;ag_explain</a></li>
+<li><span class="thisweek__label">Reading</span>the stl demo</li>
+<li><span class="thisweek__label">Artifact</span>A container-layout critique against the stated access patterns.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-05/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="5-2" data-date="2026-09-29" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-05/index.html">Module 5 — STL I: Containers</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-09-24">Lesson 1 · Thu Sep. 24 — containers, and a confident explanation checked</p>
+<p class="thisweek__next"><strong>Lesson 2 · <time datetime="2026-09-29">Tue Sep. 29</time></strong> — hallucination and its cure</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/ag_hallucination.html">▶&nbsp;ag_hallucination</a> · <a class="demo-link" href="../../rail/ag_grounding.html">▶&nbsp;ag_grounding</a></li>
+<li><span class="thisweek__label">Artifact</span>A personal container-choice guide to paste into future prompts.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-05/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="6-1" data-date="2026-10-01" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-06/index.html">Module 6 — Templates &amp; Generic Programming</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-10-06">Lesson 2 · Tue Oct. 6 — fail fast, and the ladder that names the system</p>
+<p class="thisweek__next"><strong>Lesson 1 · <time datetime="2026-10-01">Thu Oct. 1</time></strong> — one template, many instantiations</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/templates.html">▶&nbsp;templates</a></li>
+<li><span class="thisweek__label">Reading</span>the templates and compile_time demos</li>
+<li><span class="thisweek__label">Artifact</span>A templated <code>norm</code> plus the captured compiler errors.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-06/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="6-2" data-date="2026-10-06" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-06/index.html">Module 6 — Templates &amp; Generic Programming</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-10-01">Lesson 1 · Thu Oct. 1 — one template, many instantiations</p>
+<p class="thisweek__next"><strong>Lesson 2 · <time datetime="2026-10-06">Tue Oct. 6</time></strong> — fail fast, and the ladder that names the system</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/compile_time.html">▶&nbsp;compile_time</a> · <a class="demo-link" href="../../rail/ag_evidence.html">▶&nbsp;ag_evidence</a></li>
+<li><span class="thisweek__label">Artifact</span>A constrained <code>norm</code> template plus a diagnostics comparison.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-06/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="7-1" data-date="2026-10-08" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-07/index.html">Module 7 — STL II: Algorithms</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-10-13">Lesson 2 · Tue Oct. 13 — the refactoring agent, reviewed like a diff</p>
+<p class="thisweek__next"><strong>Lesson 1 · <time datetime="2026-10-08">Thu Oct. 8</time></strong> — loops to algorithms</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/stl.html">▶&nbsp;stl</a> · <a class="demo-link" href="../../rail/lambdas.html">▶&nbsp;lambdas</a></li>
+<li><span class="thisweek__label">Reading</span>Examples 1 and 4 of the lambdas demo</li>
+<li><span class="thisweek__label">Artifact</span>A personal loop-to-algorithm checklist (started).</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-07/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="7-2" data-date="2026-10-13" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-07/index.html">Module 7 — STL II: Algorithms</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-10-08">Lesson 1 · Thu Oct. 8 — loops to algorithms</p>
+<p class="thisweek__next"><strong>Lesson 2 · <time datetime="2026-10-13">Tue Oct. 13</time></strong> — the refactoring agent, reviewed like a diff</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/ag_diff.html">▶&nbsp;ag_diff</a></li>
+<li><span class="thisweek__label">Quiz</span><a href="../../assessments/quiz-2/index.html">Quiz 2</a> — first 15 minutes of class</li>
+<li><span class="thisweek__label">Artifact</span>Before/after snippets plus compliance commentary.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-07/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="8-1" data-date="2026-10-15" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-08/index.html">Module 8 — Algorithms &amp; Data Structures + Agent-Aware Design</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-10-20">Lesson 2 · Tue Oct. 20 — measure it</p>
+<p class="thisweek__next"><strong>Lesson 1 · <time datetime="2026-10-15">Thu Oct. 15</time></strong> — representations that match the workload</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/nested_containers.html">▶&nbsp;nested_containers</a></li>
+<li><span class="thisweek__label">Reading</span>the nested_containers demo</li>
+<li><span class="thisweek__label">Artifact</span>A mesh-adjacency plan plus a derived complexity check.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-08/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="8-2" data-date="2026-10-20" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-08/index.html">Module 8 — Algorithms &amp; Data Structures + Agent-Aware Design</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-10-15">Lesson 1 · Thu Oct. 15 — representations that match the workload</p>
+<p class="thisweek__next"><strong>Lesson 2 · <time datetime="2026-10-20">Tue Oct. 20</time></strong> — measure it</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/benchmarking.html">▶&nbsp;benchmarking</a></li>
+<li><span class="thisweek__label">Artifact</span>An adjacency benchmark plus an &ldquo;algorithm advisor agent&rdquo; sketch.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-08/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="9-1" data-date="2026-10-22" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-09/index.html">Module 9 — First Agentic Pipeline</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-10-27">Lesson 2 · Tue Oct. 27 — a working loop</p>
+<p class="thisweek__next"><strong>Lesson 1 · <time datetime="2026-10-22">Thu Oct. 22</time></strong> — what a pipeline is</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Reading</span>the numerics and ag_numverify demos</li>
+<li><span class="thisweek__label">Artifact</span>A pipeline spec in markdown / pseudocode (no implementation).</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-09/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="9-2" data-date="2026-10-27" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-09/index.html">Module 9 — First Agentic Pipeline</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-10-22">Lesson 1 · Thu Oct. 22 — what a pipeline is</p>
+<p class="thisweek__next"><strong>Lesson 2 · <time datetime="2026-10-27">Tue Oct. 27</time></strong> — a working loop</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/ag_testgate.html">▶&nbsp;ag_testgate</a> · <a class="demo-link" href="../../rail/ag_pipeline.html">▶&nbsp;ag_pipeline</a></li>
+<li><span class="thisweek__label">Artifact</span>A working pipeline on the FD kernel with one AI-driven fix.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-09/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="10-1" data-date="2026-10-29" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-10/index.html">Module 10 — Modern C++ I + the Modernization Agent</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-11-03">Lesson 2 · Tue Nov. 3 — the modernization agent, staged</p>
+<p class="thisweek__next"><strong>Lesson 1 · <time datetime="2026-10-29">Thu Oct. 29</time></strong> — modernization, and the ownership synthesis</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/ownership.html">▶&nbsp;ownership</a> · <a class="demo-link" href="../../rail/type_deduction.html">▶&nbsp;type_deduction</a></li>
+<li><span class="thisweek__label">In-class kit</span><a href="../../modules/module-10/handout/index.html">modernization lab handout</a></li>
+<li><span class="thisweek__label">Slides</span><a href="../../modules/module-10/slides/index.html">Module 10 slides</a></li>
+<li><span class="thisweek__label">Reading</span>the ownership and type_deduction demos</li>
+<li><span class="thisweek__label">Artifact</span>A hand-modernized <code>rk4</code> markup.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-10/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="10-2" data-date="2026-11-03" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-10/index.html">Module 10 — Modern C++ I + the Modernization Agent</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-10-29">Lesson 1 · Thu Oct. 29 — modernization, and the ownership synthesis</p>
+<p class="thisweek__next"><strong>Lesson 2 · <time datetime="2026-11-03">Tue Nov. 3</time></strong> — the modernization agent, staged</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/ag_context.html">▶&nbsp;ag_context</a></li>
+<li><span class="thisweek__label">Quiz</span><a href="../../assessments/quiz-3/index.html">Quiz 3</a> — first 15 minutes of class</li>
+<li><span class="thisweek__label">Artifact</span>A staged modernization plus a hand-annotated diff.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-10/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="11-1" data-date="2026-11-05" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-11/index.html">Module 11 — Modern C++ II + Coding-Agent Architecture</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-11-10">Lesson 2 · Tue Nov. 10 — what a model actually is</p>
+<p class="thisweek__next"><strong>Lesson 1 · <time datetime="2026-11-05">Thu Nov. 5</time></strong> — the callable toolkit</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/lambdas.html">▶&nbsp;lambdas</a> · <a class="demo-link" href="../../rail/functional.html">▶&nbsp;functional</a></li>
+<li><span class="thisweek__label">Reading</span>the lambdas and functional demos</li>
+<li><span class="thisweek__label">Artifact</span>An LLM-driver architecture diagram.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-11/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="11-2" data-date="2026-11-10" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-11/index.html">Module 11 — Modern C++ II + Coding-Agent Architecture</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-11-05">Lesson 1 · Thu Nov. 5 — the callable toolkit</p>
+<p class="thisweek__next"><strong>Lesson 2 · <time datetime="2026-11-10">Tue Nov. 10</time></strong> — what a model actually is</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/ag_models.html">▶&nbsp;ag_models</a></li>
+<li><span class="thisweek__label">Artifact</span>A stub agent in compilable C++ with guardrail annotations.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-11/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="12-1" data-date="2026-11-12" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-12/index.html">Module 12 — Testing, CI Mindset, Agent-Driven Refactoring</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-11-17">Lesson 2 · Tue Nov. 17 — the CI mindset</p>
+<p class="thisweek__next"><strong>Lesson 1 · <time datetime="2026-11-12">Thu Nov. 12</time></strong> — numeric tests and the test gate</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/ag_numverify.html">▶&nbsp;ag_numverify</a></li>
+<li><span class="thisweek__label">Reading</span>the exceptions demo, and the testing demo again</li>
+<li><span class="thisweek__label">Artifact</span>The gate rejects a boundary-breaking AI &ldquo;improvement.&rdquo;</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-12/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="12-2" data-date="2026-11-17" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-12/index.html">Module 12 — Testing, CI Mindset, Agent-Driven Refactoring</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-11-12">Lesson 1 · Thu Nov. 12 — numeric tests and the test gate</p>
+<p class="thisweek__next"><strong>Lesson 2 · <time datetime="2026-11-17">Tue Nov. 17</time></strong> — the CI mindset</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Artifact</span>A before/after kernel report plus &ldquo;the refactor that looked nice and was wrong.&rdquo;</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-12/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="13-1" data-date="2026-11-19" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-13/index.html">Module 13 — Debugging, Guardrails, Failure-Aware Agents</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-11-24">Lesson 2 · Tue Nov. 24 — guardrails made explicit</p>
+<p class="thisweek__next"><strong>Lesson 1 · <time datetime="2026-11-19">Thu Nov. 19</time></strong> — fluent, confident, wrong</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Demos</span><a class="demo-link" href="../../rail/ag_repair.html">▶&nbsp;ag_repair</a> · <a class="demo-link" href="../../rail/ag_explain.html">▶&nbsp;ag_explain</a></li>
+<li><span class="thisweek__label">Reading</span>the debugging demo again; Examples 3–4 of ag_repair and ag_explain</li>
+<li><span class="thisweek__label">Artifact</span>One discriminating test per hypothesis; only explained-and-passing patches accepted.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-13/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="13-2" data-date="2026-11-24" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-13/index.html">Module 13 — Debugging, Guardrails, Failure-Aware Agents</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-11-19">Lesson 1 · Thu Nov. 19 — fluent, confident, wrong</p>
+<p class="thisweek__next"><strong>Lesson 2 · <time datetime="2026-11-24">Tue Nov. 24</time></strong> — guardrails made explicit</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Quiz</span><a href="../../assessments/quiz-4/index.html">Quiz 4</a> — first 15 minutes of class</li>
+<li><span class="thisweek__label">Artifact</span>A safe-debugging-agent design (loop, invariants, forbidden list, error budget) for HW6.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-13/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="14-1" data-date="2026-12-01" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-14/index.html">Module 14 — Synthesis and Review</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-12-03">Lesson 2 · Thu Dec. 3 — what you built, and what it cost</p>
+<p class="thisweek__next"><strong>Lesson 1 · <time datetime="2026-12-01">Tue Dec. 1</time></strong> — the evidence ladder, end to end</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Artifact</span>A one-page personal statement of the five rules, each paired with the moment in the term that taught it.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-14/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="14-2" data-date="2026-12-03" hidden>
+<h3 class="thisweek__module"><a href="../../modules/module-14/index.html">Module 14 — Synthesis and Review</a></h3>
+<p class="thisweek__sibling" data-sibling-date="2026-12-01">Lesson 1 · Tue Dec. 1 — the evidence ladder, end to end</p>
+<p class="thisweek__next"><strong>Lesson 2 · <time datetime="2026-12-03">Thu Dec. 3</time></strong> — what you built, and what it cost</p>
+<ul class="thisweek__items">
+<li><span class="thisweek__label">Artifact</span>A demonstration in the strict three-slide format.</li>
+</ul>
+<p class="thisweek__more"><a href="../../modules/module-14/index.html">Full module page →</a></p>
+</article><article class="thisweek__card" data-key="pre-term">
+<h3 class="thisweek__module">The term has not started yet</h3><p class="thisweek__next">First class is <strong><time datetime="2026-08-25">Tue Aug. 25</time></strong><span data-countdown></span>.</p>
+<p class="thisweek__more"><a href="../../modules/orientation/index.html">Read the orientation page →</a></p>
+</article>
+
+<article class="thisweek__card" data-key="break" hidden>
+<h3 class="thisweek__module">No class this week</h3>
+<p class="thisweek__next" data-break-label></p>
+<p class="thisweek__more"><a href="../../modules/index.html">See the full schedule →</a></p>
+</article>
+
+<article class="thisweek__card" data-key="post-term" hidden>
+<h3 class="thisweek__module">The term is over</h3>
+<p class="thisweek__next">The last class was <strong><time datetime="2026-12-03">Thu Dec. 3</time></strong>.</p>
+<p class="thisweek__more"><a href="../../modules/module-14/index.html">Module 14 — Synthesis and Review →</a></p>
+</article><div class="thisweek__due" data-thisweek-due hidden></div>
+
+<script type="application/json" data-thisweek-data>{"breaks":[{"end":"2026-11-27","label":"Thanksgiving break","start":"2026-11-25"}],"deadlines":[{"date":"2026-08-27","label":"HW1 Part A released","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/hw1/"},{"date":"2026-09-03","label":"HW1 Part B released","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/hw1/"},{"date":"2026-09-08","label":"HW1 due","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/hw1/"},{"date":"2026-09-08","label":"HW2 released","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/"},{"date":"2026-09-22","label":"HW2 due","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/"},{"date":"2026-09-22","label":"HW3 released","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/"},{"date":"2026-09-22","label":"Quiz 1 — first 15 minutes","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/quiz-1/"},{"date":"2026-10-06","label":"HW3 due","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/"},{"date":"2026-10-06","label":"HW4 released","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/"},{"date":"2026-10-13","label":"Quiz 2 — first 15 minutes","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/quiz-2/"},{"date":"2026-10-20","label":"HW4 due","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/"},{"date":"2026-10-27","label":"HW5 released","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/"},{"date":"2026-11-03","label":"Quiz 3 — first 15 minutes","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/quiz-3/"},{"date":"2026-11-10","label":"HW5 due","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/"},{"date":"2026-11-10","label":"HW6 released","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/"},{"date":"2026-11-24","label":"Quiz 4 — first 15 minutes","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/quiz-4/"},{"date":"2026-12-03","label":"HW6 due","url":"https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/"}]}</script>
+</section>
+
+<h2 id="the-arc">The arc</h2>
+<p>The semester moves from <em>local code critique</em> toward <em>structured agentic workflows</em>:</p>
+<ul>
+<li><strong>Modules 1–8 — AI-assisted, human-orchestrated.</strong> Read a task → ask AI → evaluate
+(tests, checklists, measurements) → revise the prompt or reject. Fundamentals,
+OOP, ownership, templates, STL, data structures.</li>
+<li><strong>Modules 9–14 — explicit agentic pipelines.</strong> A first pipeline, a modernization
+agent, coding-agent architecture, the test gate, guardrails, and synthesis.</li>
+</ul>
+<h2 id="start-here">Start here</h2>
+<blockquote>
+<p>New to the course? Read <strong><a href="../../modules/orientation/index.html">Orientation</a></strong> — Tue Aug. 25. It covers what the course is for, how AI is used in it, and the <a href="../../assessments/dossier/index.html">AI-disclosure dossier</a> that governs every homework. Nothing is handed in for orientation, but Module 1&rsquo;s first code review assumes its framing.</p>
+</blockquote>
+<h2 id="getting-around">Getting around</h2>
+<ul>
+<li><strong><a href="../../modules/index.html">Modules</a></strong> — the spine: one page per module, each with two lessons.</li>
+<li><strong><a href="../../demos/index.html">Demos</a></strong> — the interactive demonstration library, browsable by
+catalog or by schedule.</li>
+<li><strong><a href="../../assessments/index.html">Assessments</a></strong> — homeworks, quizzes, and the AI-disclosure
+dossier.</li>
+<li><strong><a href="../../resources/index.html">Resources</a></strong> — toolchain setup, the git workflow, and readings.</li>
+</ul>
+<h2 id="the-ai-use-policy-in-one-line">The AI-use policy, in one line</h2>
+<p>Every AI-generated snippet is governed by the <strong>AI contract</strong>: it must be <em>read,
+tested, and preferably benchmarked against a baseline</em> before it counts as work.</p>
+<h2 id="course-records">Course records</h2>
+<p>Grades, announcements, and the official institutional syllabus live in Canvas:</p>
+<ul>
+<li><a class="canvas-link" href="https://canvas.fsu.edu/courses/358304/grades" rel="external noopener" target="_blank">Gradebook <span class="badge badge--canvas">Canvas&nbsp;↗</span></a></li>
+<li><a class="canvas-link" href="https://canvas.fsu.edu/courses/358304/announcements" rel="external noopener" target="_blank">Announcements <span class="badge badge--canvas">Canvas&nbsp;↗</span></a></li>
+<li><a class="canvas-link" href="https://canvas.fsu.edu/courses/358304/external_tools/154471" rel="external noopener" target="_blank">Official institutional syllabus <span class="badge badge--canvas">Canvas&nbsp;↗</span></a></li>
+</ul>
+
+
+<article class="list-view list-view--demos">
+<header>
+<h2 class="title mt--s"><a href="../../demos/ag_testgate/index.html">ag_testgate</a></h2>
+
+</header>
+<p><em>Same code, weak vs strong battery; green is a property of the tests.</em></p>
+</article>
+
+<article class="list-view list-view--demos">
+<header>
+<h2 class="title mt--s"><a href="../../demos/agentic_spec/index.html">agentic_spec</a></h2>
+
+</header>
+<p><em>Vague prompt vs spec-grade prompt; a prompt is a specification.</em></p>
+</article>
+
+<article class="list-view list-view--demos">
+<header>
+<h2 class="title mt--s"><a href="../../demos/array_pointer/index.html">array_pointer</a></h2>
+
+</header>
+<p><em>Array-to-pointer decay, std::array/span, off-the-end pointer.</em></p>
+</article>
+
+<article class="list-view list-view--demos">
+<header>
+<h2 class="title mt--s"><a href="../../demos/benchmarking/index.html">benchmarking</a></h2>
+
+</header>
+<p><em>Timing done right; the optimizer deletes your benchmark; cache effects.</em></p>
+</article>
+
+<article class="list-view list-view--demos">
+<header>
+<h2 class="title mt--s"><a href="../../demos/class_structure/index.html">class_structure</a></h2>
+
+</header>
+<p><em>Buffer anchor: ctors, deep vs shallow copy (ASan), move ops, dtor.</em></p>
+</article>
+
+<article class="list-view list-view--demos">
+<header>
+<h2 class="title mt--s"><a href="../../demos/compile_time/index.html">compile_time</a></h2>
+
+</header>
+<p><em>if constexpr, SFINAE/enable_if, concepts, static_assert.</em></p>
+</article>
+
+<article class="list-view list-view--demos">
+<header>
+<h2 class="title mt--s"><a href="../../demos/custom_iterators/index.html">custom_iterators</a></h2>
+
+</header>
+<p><em>A minimal forward iterator that works with STL algorithms.</em></p>
+</article>
+
+<article class="list-view list-view--demos">
+<header>
+<h2 class="title mt--s"><a href="../../demos/custom_types/index.html">custom_types</a></h2>
+
+</header>
+<p><em>Hashable/comparable/movable/streamable value types; explicit ctors.</em></p>
+</article>
+
+<article class="list-view list-view--demos">
+<header>
+<h2 class="title mt--s"><a href="../../demos/debugging/index.html">debugging</a></h2>
+
+</header>
+<p><em>Reading a sanitizer report; assert vs exception vs silent; UB.</em></p>
+</article>
+
+<article class="list-view list-view--demos">
+<header>
+<h2 class="title mt--s"><a href="../../demos/exceptions/index.html">exceptions</a></h2>
+
+</header>
+<p><em>throw/try/catch, catch-by-ref, RAII unwinding, noexcept.</em></p>
+</article>
+
+<nav class="pager">
+<a href="../../index.html" rel="prev" class="pager__item pager__item--prev"><span aria-hidden="true">« </span>Previous</a>
+<a href="../3/index.html" rel="next" class="pager__item pager__item--next">Next<span aria-hidden="true"> »</span></a>
+</nav>
+
+</main>
+
+
+<aside class="sidebar layout__second-sidebar">
+<nav class="menu">
+<p class="title"><strong><a href="../../assessments/index.html">Assessments</a></strong></p>
+<ul>
+<li><a href="../../assessments/transcripts/index.html">AI transcripts</a></li>
+<li><a href="../../assessments/rubric/index.html">Homework rubric</a></li>
+<li><a href="../../assessments/quiz-calculator/index.html">Quiz score calculator</a></li>
+<li><a href="../../assessments/hw1/index.html">HW1 — The AI contract, practiced once</a></li>
+<li><a href="../../assessments/quiz-1/index.html">Quiz 1</a></li>
+<li><a href="../../assessments/quiz-2/index.html">Quiz 2</a></li>
+<li><a href="../../assessments/quiz-3/index.html">Quiz 3</a></li>
+<li><a href="../../assessments/quiz-4/index.html">Quiz 4</a></li>
+<li><a href="../../assessments/dossier/index.html">AI-Disclosure Dossier</a></li>
+</ul>
+</nav>
+<nav class="menu demo-library">
+<p class="title"><strong><a href="../../demos/index.html">Demo Library</a></strong></p>
+<details class="demo-group">
+<summary>Agentic demos <span class="demo-count">(12)</span></summary>
+<ul>
+<li>
+<a href="../../demos/ag_context/index.html">ag_context</a>
+<span class="demo-desc">The model answers the context, not the prompt; the context inventory.</span>
+</li>
+<li>
+<a href="../../demos/ag_diff/index.html">ag_diff</a>
+<span class="demo-desc">Review the change not the file: regression/feature halves, edge table.</span>
+</li>
+<li>
+<a href="../../demos/ag_evidence/index.html">ag_evidence</a>
+<span class="demo-desc">The four-gate evidence ladder (compiles/runs/battery/ASan).</span>
+</li>
+<li>
+<a href="../../demos/ag_explain/index.html">ag_explain</a>
+<span class="demo-desc">Explanations are unverified commitments; check them against the run.</span>
+</li>
+<li>
+<a href="../../demos/ag_grounding/index.html">ag_grounding</a>
+<span class="demo-desc">Ungrounded vs grounded (real header pasted in).</span>
+</li>
+<li>
+<a href="../../demos/ag_hallucination/index.html">ag_hallucination</a>
+<span class="demo-desc">The compiler as first honesty gate: invented refs, stale APIs.</span>
+</li>
+<li>
+<a href="../../demos/ag_models/index.html">ag_models</a>
+<span class="demo-desc">Same prompt x six local tiers x three frameworks; which gate stops each.</span>
+</li>
+<li>
+<a href="../../demos/ag_numverify/index.html">ag_numverify</a>
+<span class="demo-desc">Numerically-wrong-but-green; cancellation; the oracle is part of the test.</span>
+</li>
+<li>
+<a href="../../demos/ag_pipeline/index.html">ag_pipeline</a>
+<span class="demo-desc">The first agentic pipeline as a recorded replay: build/test/feedback loop.</span>
+</li>
+<li>
+<a href="../../demos/ag_repair/index.html">ag_repair</a>
+<span class="demo-desc">Directing a repair: vague vs directed, what-must-not-change clauses.</span>
+</li>
+<li>
+<a href="../../demos/ag_testgate/index.html">ag_testgate</a>
+<span class="demo-desc">Same code, weak vs strong battery; green is a property of the tests.</span>
+</li>
+<li>
+<a href="../../demos/agentic_spec/index.html">agentic_spec</a>
+<span class="demo-desc">Vague prompt vs spec-grade prompt; a prompt is a specification.</span>
+</li>
+</ul>
+</details>
+<details class="demo-group">
+<summary>Foundations <span class="demo-count">(13)</span></summary>
+<ul>
+<li>
+<a href="../../demos/array_pointer/index.html">array_pointer</a>
+<span class="demo-desc">Array-to-pointer decay, std::array/span, off-the-end pointer.</span>
+</li>
+<li>
+<a href="../../demos/benchmarking/index.html">benchmarking</a>
+<span class="demo-desc">Timing done right; the optimizer deletes your benchmark; cache effects.</span>
+</li>
+<li>
+<a href="../../demos/compile_time/index.html">compile_time</a>
+<span class="demo-desc">if constexpr, SFINAE/enable_if, concepts, static_assert.</span>
+</li>
+<li>
+<a href="../../demos/debugging/index.html">debugging</a>
+<span class="demo-desc">Reading a sanitizer report; assert vs exception vs silent; UB.</span>
+</li>
+<li>
+<a href="../../demos/function_args/index.html">function_args</a>
+<span class="demo-desc">Pass by value/pointer/reference, const&amp;, move, RVO.</span>
+</li>
+<li>
+<a href="../../demos/list_ops/index.html">list_ops</a>
+<span class="demo-desc">Linked-list pointer mechanics: insert/erase/splice, iterator validity.</span>
+</li>
+<li>
+<a href="../../demos/numerics/index.html">numerics</a>
+<span class="demo-desc">Floating-point behavior: tolerances, cancellation, abs vs rel error.</span>
+</li>
+<li>
+<a href="../../demos/ownership/index.html">ownership</a>
+<span class="demo-desc">The four ownership relationships; RAII enforces ownership.</span>
+</li>
+<li>
+<a href="../../demos/pointers_basic/index.html">pointers_basic</a>
+<span class="demo-desc">References vs pointers, nullptr, dangling/null gotchas.</span>
+</li>
+<li>
+<a href="../../demos/smart_pointers/index.html">smart_pointers</a>
+<span class="demo-desc">unique/shared/weak_ptr, make_*, ownership and double-free.</span>
+</li>
+<li>
+<a href="../../demos/stackframes/index.html">stackframes</a>
+<span class="demo-desc">Stack vs heap vs static lifetime; recursion frames.</span>
+</li>
+<li>
+<a href="../../demos/strings/index.html">strings</a>
+<span class="demo-desc">std::string value semantics, SSO, string_view borrowing and dangle.</span>
+</li>
+<li>
+<a href="../../demos/type_deduction/index.html">type_deduction</a>
+<span class="demo-desc">auto drops ref/const, range-for copy mistake, decltype(auto).</span>
+</li>
+</ul>
+</details>
+<details class="demo-group">
+<summary>OOP <span class="demo-count">(12)</span></summary>
+<ul>
+<li>
+<a href="../../demos/class_structure/index.html">class_structure</a>
+<span class="demo-desc">Buffer anchor: ctors, deep vs shallow copy (ASan), move ops, dtor.</span>
+</li>
+<li>
+<a href="../../demos/custom_iterators/index.html">custom_iterators</a>
+<span class="demo-desc">A minimal forward iterator that works with STL algorithms.</span>
+</li>
+<li>
+<a href="../../demos/custom_types/index.html">custom_types</a>
+<span class="demo-desc">Hashable/comparable/movable/streamable value types; explicit ctors.</span>
+</li>
+<li>
+<a href="../../demos/exceptions/index.html">exceptions</a>
+<span class="demo-desc">throw/try/catch, catch-by-ref, RAII unwinding, noexcept.</span>
+</li>
+<li>
+<a href="../../demos/functional/index.html">functional</a>
+<span class="demo-desc">Four callables under one signature; std::function type erasure.</span>
+</li>
+<li>
+<a href="../../demos/inheritance/index.html">inheritance</a>
+<span class="demo-desc">is-a, virtual dispatch, slicing, override, non-virtual-dtor gotcha.</span>
+</li>
+<li>
+<a href="../../demos/lambdas/index.html">lambdas</a>
+<span class="demo-desc">Capture by value/ref, mutable, predicates, dangling-capture gotcha.</span>
+</li>
+<li>
+<a href="../../demos/nested_containers/index.html">nested_containers</a>
+<span class="demo-desc">Matrix as vector-of-vectors / flat / sparse (map vs CSR).</span>
+</li>
+<li>
+<a href="../../demos/op_overload/index.html">op_overload</a>
+<span class="demo-desc">Vec2 anchor: arithmetic, comparison, iostream, const-correctness.</span>
+</li>
+<li>
+<a href="../../demos/stl/index.html">stl</a>
+<span class="demo-desc">Containers, iterators, algorithms-over-loops, iterator invalidation.</span>
+</li>
+<li>
+<a href="../../demos/templates/index.html">templates</a>
+<span class="demo-desc">Type params, deduction, specialization, header-visibility gotcha, CTAD.</span>
+</li>
+<li>
+<a href="../../demos/testing/index.html">testing</a>
+<span class="demo-desc">Writing a C&#43;&#43; test: boundary/value tests, tolerances, regression.</span>
+</li>
+</ul>
+</details>
+</nav>
+
+<nav class="menu">
+<p class="title"><strong><a href="../../modules/index.html">Modules</a></strong></p>
+<ul class="module-orientation"><li><a href="../../modules/orientation/index.html">Orientation</a></li></ul>
+<details class="module-group">
+<summary>Modules 1–8 · AI-assisted</summary>
+<ul>
+<li><a href="../../modules/module-01/index.html">Module 1 — Basic Concepts &#43; AI as Co-programmer</a></li>
+<li><a href="../../modules/module-02/index.html">Module 2 — OOP Basics &#43; Critiquing AI-Generated Classes</a></li>
+<li><a href="../../modules/module-03/index.html">Module 3 — Memory Management &#43; Ownership</a></li>
+<li><a href="../../modules/module-04/index.html">Module 4 — Advanced OOP &#43; Value Semantics as Policy</a></li>
+<li><a href="../../modules/module-05/index.html">Module 5 — STL I: Containers</a></li>
+<li><a href="../../modules/module-06/index.html">Module 6 — Templates &amp; Generic Programming</a></li>
+<li><a href="../../modules/module-07/index.html">Module 7 — STL II: Algorithms</a></li>
+<li><a href="../../modules/module-08/index.html">Module 8 — Algorithms &amp; Data Structures &#43; Agent-Aware Design</a></li>
+</ul>
+</details>
+<details class="module-group">
+<summary>Modules 9–14 · Agentic pipelines</summary>
+<ul>
+<li><a href="../../modules/module-09/index.html">Module 9 — First Agentic Pipeline</a></li>
+<li><a href="../../modules/module-10/index.html">Module 10 — Modern C&#43;&#43; I &#43; the Modernization Agent</a></li>
+<li><a href="../../modules/module-11/index.html">Module 11 — Modern C&#43;&#43; II &#43; Coding-Agent Architecture</a></li>
+<li><a href="../../modules/module-12/index.html">Module 12 — Testing, CI Mindset, Agent-Driven Refactoring</a></li>
+<li><a href="../../modules/module-13/index.html">Module 13 — Debugging, Guardrails, Failure-Aware Agents</a></li>
+<li><a href="../../modules/module-14/index.html">Module 14 — Synthesis and Review</a></li>
+</ul>
+</details>
+</nav>
+
+<nav class="menu">
+<p class="title"><strong><a href="../../resources/index.html">Resources</a></strong></p>
+<ul>
+<li><a href="../../resources/git-workflow/index.html">The minimal-git workflow</a></li>
+</ul>
+</nav>
+</aside>
+<footer class="footer layout__footer mt--l">
+<p><span>© ISC5305 — Agentic Scientific C&#43;&#43;</span></p>
+
+
+
+</footer>
+
+</div>
+</body>
+</html>

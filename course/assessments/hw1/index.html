@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en-us" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>HW1 — The AI contract, practiced once – ISC5305 — Agentic Scientific C&#43;&#43;</title>
+<meta name="description" content="Modules 1–2. A thin homework released in two parts, both due together.">
+<meta name="created" content="0001-01-01T00:00:00+0000">
+<meta name="modified" content="0001-01-01T00:00:00+0000">
+
+
+<meta property="og:site_name" content="ISC5305 — Agentic Scientific C&#43;&#43;">
+<meta property="og:title" content="HW1 — The AI contract, practiced once">
+<meta property="og:url" content="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/hw1/">
+<meta property="og:type" content="article">
+
+<meta name="generator" content="Hugo 0.161.1">
+
+
+
+<link rel="canonical" href="index.html">
+
+<link rel="apple-touch-icon" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/apple-touch-icon.png">
+
+<link rel="stylesheet" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/css/styles.16bb606e4f4b351496e181343a82d9406712f65dac2469ea8b1cdceaeef54498.css" integrity="sha256-Frtgbk9LNRSW4YE0OoLZQGcS9l2sJGnqixzc6u71RJg=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/css/mobilemenu.min.2a3448b79abf7c38a16ca3d141bdb684f8f6c6e3ec0dbc97343a095188204886.css" integrity="sha256-KjRIt5q/fDihbKPRQb22hPj2xuPsDbyXNDoJUYggSIY=" crossorigin="anonymous" media="screen">
+<link rel="stylesheet" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/css/print.min.6a072d1ee9f0c99668a784c9bc55f9b97142f6d7b4b408ec2b8aeeaf8903d65a.css" integrity="sha256-agctHunwyZZop4TJvFX5uXFC9te0tAjsK4rur4kD1lo=" crossorigin="anonymous" media="print">
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "headline": "HW1 — The AI contract, practiced once",
+    "datePublished": "0001-01-01T00:00:00Z",
+    "dateModified": "0001-01-01T00:00:00Z",
+    "url" : "https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/hw1/",
+    "description": "Modules 1–2. A thin homework released in two parts, both due together.",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ISC5305 — Agentic Scientific C++",
+      "url": "https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/"
+    }
+  }
+</script>
+
+<script>
+(()=>{(function(){document.querySelector("html").classList.replace("nojs","js")})();})();
+
+</script>
+
+<script defer src="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/js/mobilemenu.7ce1f75fd1d49cd683a008352ad9001f800349629be01d531a19c02b5a84817b.js"></script>
+<script defer src="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/js/script.f2979a93a325fecf9605263bd141398a311c8e23388ed7dcff74f92f7e632866.js"></script>
+
+
+
+<link rel="stylesheet" href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/css/custom.css">
+<script src="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/js/thisweek.js" defer></script>
+
+
+<link rel="stylesheet" href="../../student-theme.css">
+</head>
+
+<body class="single-page section-page--assessments">
+<div class="page layout__page layout__sidebar-second">
+<header class="header layout__header">
+<h1 class="header__site-name">
+<a href="../../index.html" title="Home" class="header__site-link" rel="home"><span>ISC5305 — Agentic Scientific C&#43;&#43;</span></a>
+</h1>
+<div class="region header__region">
+</div>
+</header>
+
+<nav class="main-menu mx--xs layout__navigation" aria-label="Main menu">
+<ul class="flex-inline mx--0">
+<li><a href="../../index.html"><span>Home</span></a></li>
+<li><a href="../../modules/index.html"><span>Modules</span></a></li>
+<li><a href="../../demos/index.html"><span>Demos</span></a></li>
+<li><a href="../index.html" aria-current="page"><span>Assessments</span></a></li>
+<li><a href="../../resources/index.html"><span>Resources</span></a></li>
+<li><a href="../../search/index.html"><span>Search</span></a></li>
+</ul>
+</nav>
+<div class="mobile-nav" dir="ltr" hidden>
+  <div class="mobile-nav__cover"></div>
+  <button class="mobile-nav__toggle button" aria-expanded="false" aria-controls="sheet">
+    Menu
+    <svg class="mobile-nav__hamburger" viewBox="0 0 100 100" focusable="false" aria-hidden="true">
+      <rect width="80" height="12" x="10" y="20" rx="5"></rect>
+      <rect width="80" height="12" x="10" y="45" rx="5"></rect>
+      <rect width="80" height="12" x="10" y="70" rx="5"></rect>
+    </svg>
+  </button>
+  <div class="mobile-nav__sheet link-nav" id="sheet" data-theme="dark" aria-hidden="true">
+    <div class="mobile-nav__region"></div>
+    <nav class="mobile-nav__main-menu" aria-label="Main menu">
+    <ul class="mobile-nav__navbar">
+    <li><a href="../../index.html"><span>Home</span></a></li>
+    <li><a href="../../modules/index.html"><span>Modules</span></a></li>
+    <li><a href="../../demos/index.html"><span>Demos</span></a></li>
+    <li><a href="../index.html" aria-current="page"><span>Assessments</span></a></li>
+    <li><a href="../../resources/index.html"><span>Resources</span></a></li>
+    <li><a href="../../search/index.html"><span>Search</span></a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+<main class="main layout__main">
+<article class="single-view single-view--assessments">
+<header>
+<h1 class="title">HW1 — The AI contract, practiced once</h1>
+</header>
+
+<p><strong>Covers Modules 1–2 · thin homework · released in two parts · due <time datetime="2026-09-08">Tue Sep. 8</time>, 11:59 pm.</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>Released</th>
+          <th>Due</th>
+          <th>What it needs</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Part A</strong> — the AI contract</td>
+          <td><time datetime="2026-08-27">Thu Aug. 27</time> (Module 1, Lesson 1)</td>
+          <td><time datetime="2026-09-08">Tue Sep. 8</time></td>
+          <td>Nothing beyond that lesson. Start immediately.</td>
+      </tr>
+      <tr>
+          <td><strong>Part B</strong> — one rubric category</td>
+          <td><time datetime="2026-09-03">Thu Sep. 3</time> (Module 2, Lesson 1)</td>
+          <td><time datetime="2026-09-08">Tue Sep. 8</time></td>
+          <td>The class-design rubric, taught that morning.</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Both parts are due at the same time, in one push.</strong> There is no separate Part A deadline — the staged release exists so you can start Part A twelve days early, not so you can hand it in early.</p>
+<p>Part A is the larger half and you have twelve days for it. Do not save it for the weekend before the deadline — the point of this homework is the loop, and the loop takes more than one sitting.</p>
+<blockquote>
+<p><strong>You will need git before you can submit.</strong> The <a href="../../modules/module-02/handout/index.html">minimal-git handout</a> is <time datetime="2026-09-03">Thu Sep. 3</time> — six commands, and pushing is submitting. Until then, work in a local directory. Nothing is lost: you create the repo that day and commit what you already have.</p>
+</blockquote>
+<h2 id="the-point-of-this-homework">The point of this homework</h2>
+<p>Module 1 showed you two genuine AI replies to one prompt: one that looked professional and did not compile, one that compiled and chose silently at every edge the prompt left unpinned. Neither was <em>wrong</em> so much as <em>unpinned</em>. This homework has you run that loop yourself, once, end to end — <strong>write a spec, get two proposals, critique them, and let tests decide</strong> — on a problem small enough that nothing hides.</p>
+<p>You are expected to use AI heavily. You are graded on how you steer, constrain, test, and critique it, not on whether you wrote the code yourself.</p>
+<hr>
+<h2 id="part-a--the-trapezoid-kernel">Part A — the trapezoid kernel</h2>
+<p>Released <time datetime="2026-08-27">Thu Aug. 27</time> · due <time datetime="2026-09-08">Tue Sep. 8</time> · 75% of the marks.</p>
+<h3 id="a1-write-a-prompt-that-is-a-spec">A1. Write a prompt that is a spec</h3>
+<p>Module 1&rsquo;s prompt was deliberately underspecified. Yours must not be. Write <strong>one prompt</strong> that pins, at minimum:</p>
+<ul>
+<li>the <strong>exact signature</strong> you want, including how the callable is passed;</li>
+<li>the behavior for <strong><code>n &lt;= 0</code></strong>, for <strong><code>a &gt; b</code></strong>, and for <strong><code>a == b</code></strong>;</li>
+<li>the <strong>error policy</strong> — return a sentinel, throw, or something else, named explicitly;</li>
+<li>what &ldquo;correct&rdquo; means — the property you would test, not a vague quality word.</li>
+</ul>
+<p>This is the <code>agentic_spec</code> pattern: the demonstration — <a class="demo-link" href="../../rail/agentic_spec.html">▶&nbsp;agentic_spec</a>
+ — is the worked answer, and its pinned arm is the standard your prompt is measured against. Save it as <code>prompt.md</code>.</p>
+<h3 id="a2-collect-two-implementations">A2. Collect two implementations</h3>
+<p>Send that prompt to an AI and keep the reply <strong>verbatim</strong> — byte-for-byte from the code fence, nothing edited, added, or removed. Then get a <strong>second, genuinely different</strong> implementation. Either is acceptable:</p>
+<ul>
+<li>the same prompt sent to a different model, or</li>
+<li>the same model asked for a materially different approach (a hand-written loop versus <code>std::accumulate</code>, say — the comparison Module 1 Lesson 2 runs).</li>
+</ul>
+<p>Save them as <code>impl_a.cpp</code> and <code>impl_b.cpp</code>, each with a <strong>provenance header comment</strong>: model and version, date, any non-default settings, and which reply of how many this was. If you discarded four replies to keep two, say so — selection is part of the disclosure, exactly as the course kit discloses its own.</p>
+<h3 id="a3-review-both-against-the-5-part-checklist">A3. Review both against the 5-part checklist</h3>
+<p>For each implementation, work the checklist from Module 1: <strong>spec alignment · correctness and edge cases · safety · style · testability.</strong></p>
+<p>Write <code>REVIEW.md</code> containing <strong>at least three real findings across the two implementations</strong>, each stated as:</p>
+<ul>
+<li>the <strong>category</strong> it falls under,</li>
+<li>the <strong>symptom</strong> — what looks wrong,</li>
+<li>the <strong>evidence</strong> — the compiler diagnostic, the probe output, the failing test. A finding with no evidence is an opinion.</li>
+</ul>
+<p>Rule zero still applies: <strong>the compiler is the first reviewer.</strong> If an implementation does not compile, that is finding number one and you say so plainly.</p>
+<h3 id="a4-write-the-tests">A4. Write the tests</h3>
+<p>Write <strong>5–8 tests</strong> in <code>tests.cpp</code>. They must run and they must be able to fail — a <code>main</code> that prints numbers next to expected values in comments is a demonstration, not a test.</p>
+<p>Two requirements carry most of the marks here:</p>
+<ol>
+<li><strong>A clause-to-test table</strong> in <code>REVIEW.md</code>. Every edge you pinned in A1 gets a row: <em>clause → the test that checks it</em>. A clause with no test means you specified something you never verified.</li>
+<li><strong>At least one test that distinguishes the two implementations</strong> — one that passes on one and fails on the other. Two happy-path tests that both pass tell you nothing about either. If your two implementations genuinely agree everywhere you can probe, say so in <code>REVIEW.md</code> and show the probes you tried; that is a finding too, and an honest one.</li>
+</ol>
+<h3 id="a5-the-reflection">A5. The reflection</h3>
+<p><code>REFLECTION.md</code>, <strong>two pages maximum</strong>. Not a summary of what you did — the interesting content is where the loop surprised you. What did you leave unpinned that you did not realize was unpinned until a test failed? What did the second implementation reveal that the first one hid?</p>
+<hr>
+<h2 id="part-b--one-category-on-your-own-class">Part B — one category, on your own class</h2>
+<p>Released <time datetime="2026-09-03">Thu Sep. 3</time>, after the class-design rubric · due <time datetime="2026-09-08">Tue Sep. 8</time> · 25% of the marks.</p>
+<p>Module 2 Lesson 1 gives you a four-category rubric — <strong>data hiding and invariants · construction and default state · ownership and lifetime · interface clarity</strong> — and scores a <code>Vector1D</code> with it. The full four-category exercise is the in-class lab, not homework.</p>
+<p>For homework, <strong>pick one category</strong> and apply it to <strong>your own <code>Vector1D</code></strong>:</p>
+<ul>
+<li>write the class (AI-assisted is fine, and disclosed as always);</li>
+<li>score it against your chosen category, citing the specific lines that earn the score;</li>
+<li>name <strong>one concrete defect</strong> that category exposes, and fix it;</li>
+<li>show the fix is real — a test that fails before and passes after.</li>
+</ul>
+<p><code>PARTB.md</code>, <strong>one page maximum</strong>. Say which category you chose in the first line.</p>
+<hr>
+<h2 id="what-you-submit">What you submit</h2>
+<p>Push to your GitHub Classroom repo — <strong>push is submit</strong>. <span class="planned" role="note" aria-label="Planned, not yet available: GitHub Classroom invitation link"><em>GitHub Classroom invitation link</em> <span class="badge badge--wip">planned</span></span>
+</p>
+<pre tabindex="0"><code>hw1/
+  prompt.md          Part A1 — your prompt, as sent
+  impl_a.cpp         Part A2 — verbatim AI output + provenance header
+  impl_b.cpp         Part A2 — verbatim AI output + provenance header
+  tests.cpp          Part A4 — 5-8 tests, including the distinguishing one
+  REVIEW.md          Part A3 + A4 — findings and the clause-to-test table
+  REFLECTION.md      Part A5 — 2 pages max
+  PARTB.md           Part B — 1 page max
+  DOSSIER_LITE.md    the disclosure form
+  transcripts/       every AI session, timestamped
+  .gitignore
+</code></pre><ul>
+<li><strong><a href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/dossier/DOSSIER_LITE.md"><code>DOSSIER_LITE.md</code></a></strong> — the thin-homework form. Run <a href="https://people.sc.fsu.edu/~gerlebacher/course/isc5305_f2026/assessments/dossier/check_dossier.sh"><code>check_dossier.sh</code></a> before you push: <strong>over the cap is ungraded</strong>, and that is mechanical, not a judgment call.</li>
+<li><strong><a href="../transcripts/index.html"><code>transcripts/</code></a></strong> — <em>every</em> AI session, one markdown file each, named <code>2026-08-29_14h05mEST.md</code>. Not a selection. A dossier describing work that no transcript supports is an incomplete submission.</li>
+<li><strong>No build artifacts.</strong> A committed <code>a.out</code> or <code>hw1</code> binary costs points — that is what the shipped <code>.gitignore</code> is for. See <a href="../../resources/git-workflow/index.html">the git workflow</a>.</li>
+</ul>
+<h2 id="how-it-is-graded">How it is graded</h2>
+<p>By the <a href="../rubric/index.html">homework rubric</a>, the same one used for all six homeworks. Two notes specific to HW1:</p>
+<ul>
+<li><strong>The evidence gates stop at three.</strong> The ladder is <em>compiles → runs → tests → sanitizer</em>, but the sanitizer is Module 3 material. HW1 is graded on the first three gates only. Running a sanitizer anyway costs you nothing and teaches you something.</li>
+<li><strong>Part A is 75% of the marks, Part B is 25%.</strong> Part B is deliberately small; it exists so the class-design vocabulary is used once before HW2 leans on it hard.</li>
+</ul>
+<p>Everything above is a floor, not a target. A submission that meets every requirement and shows no evidence of having thought about the problem is a C.</p>
+
+
+</article>
+</main>
+
+
+<aside class="sidebar layout__second-sidebar">
+<nav class="menu">
+<p class="title"><strong><a href="../index.html" aria-current="page">Assessments</a></strong></p>
+<ul>
+<li><a href="../transcripts/index.html">AI transcripts</a></li>
+<li><a href="../rubric/index.html">Homework rubric</a></li>
+<li><a href="../quiz-calculator/index.html">Quiz score calculator</a></li>
+<li><a href="index.html" aria-current="page">HW1 — The AI contract, practiced once</a></li>
+<li><a href="../quiz-1/index.html">Quiz 1</a></li>
+<li><a href="../quiz-2/index.html">Quiz 2</a></li>
+<li><a href="../quiz-3/index.html">Quiz 3</a></li>
+<li><a href="../quiz-4/index.html">Quiz 4</a></li>
+<li><a href="../dossier/index.html">AI-Disclosure Dossier</a></li>
+</ul>
+</nav>
+<nav class="menu demo-library">
+<p class="title"><strong><a href="../../demos/index.html">Demo Library</a></strong></p>
+<details class="demo-group">
+<summary>Agentic demos <span class="demo-count">(12)</span></summary>
+<ul>
+<li>
+<a href="../../demos/ag_context/index.html">ag_context</a>
+<span class="demo-desc">The model answers the context, not the prompt; the context inventory.</span>
+</li>
+<li>
+<a href="../../demos/ag_diff/index.html">ag_diff</a>
+<span class="demo-desc">Review the change not the file: regression/feature halves, edge table.</span>
+</li>
+<li>
+<a href="../../demos/ag_evidence/index.html">ag_evidence</a>
+<span class="demo-desc">The four-gate evidence ladder (compiles/runs/battery/ASan).</span>
+</li>
+<li>
+<a href="../../demos/ag_explain/index.html">ag_explain</a>
+<span class="demo-desc">Explanations are unverified commitments; check them against the run.</span>
+</li>
+<li>
+<a href="../../demos/ag_grounding/index.html">ag_grounding</a>
+<span class="demo-desc">Ungrounded vs grounded (real header pasted in).</span>
+</li>
+<li>
+<a href="../../demos/ag_hallucination/index.html">ag_hallucination</a>
+<span class="demo-desc">The compiler as first honesty gate: invented refs, stale APIs.</span>
+</li>
+<li>
+<a href="../../demos/ag_models/index.html">ag_models</a>
+<span class="demo-desc">Same prompt x six local tiers x three frameworks; which gate stops each.</span>
+</li>
+<li>
+<a href="../../demos/ag_numverify/index.html">ag_numverify</a>
+<span class="demo-desc">Numerically-wrong-but-green; cancellation; the oracle is part of the test.</span>
+</li>
+<li>
+<a href="../../demos/ag_pipeline/index.html">ag_pipeline</a>
+<span class="demo-desc">The first agentic pipeline as a recorded replay: build/test/feedback loop.</span>
+</li>
+<li>
+<a href="../../demos/ag_repair/index.html">ag_repair</a>
+<span class="demo-desc">Directing a repair: vague vs directed, what-must-not-change clauses.</span>
+</li>
+<li>
+<a href="../../demos/ag_testgate/index.html">ag_testgate</a>
+<span class="demo-desc">Same code, weak vs strong battery; green is a property of the tests.</span>
+</li>
+<li>
+<a href="../../demos/agentic_spec/index.html">agentic_spec</a>
+<span class="demo-desc">Vague prompt vs spec-grade prompt; a prompt is a specification.</span>
+</li>
+</ul>
+</details>
+<details class="demo-group">
+<summary>Foundations <span class="demo-count">(13)</span></summary>
+<ul>
+<li>
+<a href="../../demos/array_pointer/index.html">array_pointer</a>
+<span class="demo-desc">Array-to-pointer decay, std::array/span, off-the-end pointer.</span>
+</li>
+<li>
+<a href="../../demos/benchmarking/index.html">benchmarking</a>
+<span class="demo-desc">Timing done right; the optimizer deletes your benchmark; cache effects.</span>
+</li>
+<li>
+<a href="../../demos/compile_time/index.html">compile_time</a>
+<span class="demo-desc">if constexpr, SFINAE/enable_if, concepts, static_assert.</span>
+</li>
+<li>
+<a href="../../demos/debugging/index.html">debugging</a>
+<span class="demo-desc">Reading a sanitizer report; assert vs exception vs silent; UB.</span>
+</li>
+<li>
+<a href="../../demos/function_args/index.html">function_args</a>
+<span class="demo-desc">Pass by value/pointer/reference, const&amp;, move, RVO.</span>
+</li>
+<li>
+<a href="../../demos/list_ops/index.html">list_ops</a>
+<span class="demo-desc">Linked-list pointer mechanics: insert/erase/splice, iterator validity.</span>
+</li>
+<li>
+<a href="../../demos/numerics/index.html">numerics</a>
+<span class="demo-desc">Floating-point behavior: tolerances, cancellation, abs vs rel error.</span>
+</li>
+<li>
+<a href="../../demos/ownership/index.html">ownership</a>
+<span class="demo-desc">The four ownership relationships; RAII enforces ownership.</span>
+</li>
+<li>
+<a href="../../demos/pointers_basic/index.html">pointers_basic</a>
+<span class="demo-desc">References vs pointers, nullptr, dangling/null gotchas.</span>
+</li>
+<li>
+<a href="../../demos/smart_pointers/index.html">smart_pointers</a>
+<span class="demo-desc">unique/shared/weak_ptr, make_*, ownership and double-free.</span>
+</li>
+<li>
+<a href="../../demos/stackframes/index.html">stackframes</a>
+<span class="demo-desc">Stack vs heap vs static lifetime; recursion frames.</span>
+</li>
+<li>
+<a href="../../demos/strings/index.html">strings</a>
+<span class="demo-desc">std::string value semantics, SSO, string_view borrowing and dangle.</span>
+</li>
+<li>
+<a href="../../demos/type_deduction/index.html">type_deduction</a>
+<span class="demo-desc">auto drops ref/const, range-for copy mistake, decltype(auto).</span>
+</li>
+</ul>
+</details>
+<details class="demo-group">
+<summary>OOP <span class="demo-count">(12)</span></summary>
+<ul>
+<li>
+<a href="../../demos/class_structure/index.html">class_structure</a>
+<span class="demo-desc">Buffer anchor: ctors, deep vs shallow copy (ASan), move ops, dtor.</span>
+</li>
+<li>
+<a href="../../demos/custom_iterators/index.html">custom_iterators</a>
+<span class="demo-desc">A minimal forward iterator that works with STL algorithms.</span>
+</li>
+<li>
+<a href="../../demos/custom_types/index.html">custom_types</a>
+<span class="demo-desc">Hashable/comparable/movable/streamable value types; explicit ctors.</span>
+</li>
+<li>
+<a href="../../demos/exceptions/index.html">exceptions</a>
+<span class="demo-desc">throw/try/catch, catch-by-ref, RAII unwinding, noexcept.</span>
+</li>
+<li>
+<a href="../../demos/functional/index.html">functional</a>
+<span class="demo-desc">Four callables under one signature; std::function type erasure.</span>
+</li>
+<li>
+<a href="../../demos/inheritance/index.html">inheritance</a>
+<span class="demo-desc">is-a, virtual dispatch, slicing, override, non-virtual-dtor gotcha.</span>
+</li>
+<li>
+<a href="../../demos/lambdas/index.html">lambdas</a>
+<span class="demo-desc">Capture by value/ref, mutable, predicates, dangling-capture gotcha.</span>
+</li>
+<li>
+<a href="../../demos/nested_containers/index.html">nested_containers</a>
+<span class="demo-desc">Matrix as vector-of-vectors / flat / sparse (map vs CSR).</span>
+</li>
+<li>
+<a href="../../demos/op_overload/index.html">op_overload</a>
+<span class="demo-desc">Vec2 anchor: arithmetic, comparison, iostream, const-correctness.</span>
+</li>
+<li>
+<a href="../../demos/stl/index.html">stl</a>
+<span class="demo-desc">Containers, iterators, algorithms-over-loops, iterator invalidation.</span>
+</li>
+<li>
+<a href="../../demos/templates/index.html">templates</a>
+<span class="demo-desc">Type params, deduction, specialization, header-visibility gotcha, CTAD.</span>
+</li>
+<li>
+<a href="../../demos/testing/index.html">testing</a>
+<span class="demo-desc">Writing a C&#43;&#43; test: boundary/value tests, tolerances, regression.</span>
+</li>
+</ul>
+</details>
+</nav>
+
+<nav class="menu">
+<p class="title"><strong><a href="../../modules/index.html">Modules</a></strong></p>
+<ul class="module-orientation"><li><a href="../../modules/orientation/index.html">Orientation</a></li></ul>
+<details class="module-group">
+<summary>Modules 1–8 · AI-assisted</summary>
+<ul>
+<li><a href="../../modules/module-01/index.html">Module 1 — Basic Concepts &#43; AI as Co-programmer</a></li>
+<li><a href="../../modules/module-02/index.html">Module 2 — OOP Basics &#43; Critiquing AI-Generated Classes</a></li>
+<li><a href="../../modules/module-03/index.html">Module 3 — Memory Management &#43; Ownership</a></li>
+<li><a href="../../modules/module-04/index.html">Module 4 — Advanced OOP &#43; Value Semantics as Policy</a></li>
+<li><a href="../../modules/module-05/index.html">Module 5 — STL I: Containers</a></li>
+<li><a href="../../modules/module-06/index.html">Module 6 — Templates &amp; Generic Programming</a></li>
+<li><a href="../../modules/module-07/index.html">Module 7 — STL II: Algorithms</a></li>
+<li><a href="../../modules/module-08/index.html">Module 8 — Algorithms &amp; Data Structures &#43; Agent-Aware Design</a></li>
+</ul>
+</details>
+<details class="module-group">
+<summary>Modules 9–14 · Agentic pipelines</summary>
+<ul>
+<li><a href="../../modules/module-09/index.html">Module 9 — First Agentic Pipeline</a></li>
+<li><a href="../../modules/module-10/index.html">Module 10 — Modern C&#43;&#43; I &#43; the Modernization Agent</a></li>
+<li><a href="../../modules/module-11/index.html">Module 11 — Modern C&#43;&#43; II &#43; Coding-Agent Architecture</a></li>
+<li><a href="../../modules/module-12/index.html">Module 12 — Testing, CI Mindset, Agent-Driven Refactoring</a></li>
+<li><a href="../../modules/module-13/index.html">Module 13 — Debugging, Guardrails, Failure-Aware Agents</a></li>
+<li><a href="../../modules/module-14/index.html">Module 14 — Synthesis and Review</a></li>
+</ul>
+</details>
+</nav>
+
+<nav class="menu">
+<p class="title"><strong><a href="../../resources/index.html">Resources</a></strong></p>
+<ul>
+<li><a href="../../resources/git-workflow/index.html">The minimal-git workflow</a></li>
+</ul>
+</nav>
+</aside>
+<footer class="footer layout__footer mt--l">
+<p><span>© ISC5305 — Agentic Scientific C&#43;&#43;</span></p>
+
+
+
+</footer>
+
+</div>
+</body>
+</html>

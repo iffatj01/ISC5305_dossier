@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ISC5305 AI-Disclosure Dossier requirements, templates, checker, and worked sample."
+    />
+    <title>AI-Disclosure Dossier – ISC5305</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="course/index.html">
+        <span class="brand-icon">C<span>++</span></span>
+        <span>
+          <strong>ISC5305</strong>
+          <small>Agentic Scientific C++</small>
+        </span>
+      </a>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Open menu</span>
+      </button>
+
+      <nav id="main-nav" class="main-nav" aria-label="Course navigation">
+        <a href="course/index.html">Home</a>
+        <a href="course/modules/index.html">Modules</a>
+        <a href="course/demos/index.html">Demos</a>
+        <a class="active" href="course/assessments/index.html">Assessments</a>
+        <a href="course/resources/index.html">Resources</a>
+        <a href="course/search/index.html">Search</a>
+      </nav>
+    </header>
+
+    <div class="page-shell">
+      <button class="sidebar-open" type="button" aria-controls="course-navigation" aria-expanded="false">
+        <span aria-hidden="true">☰</span> Course contents
+      </button>
+
+      <main id="main-content">
+        <article>
+          <header class="cover">
+            <p class="breadcrumb">
+              <a href="course/assessments/index.html">Assessments</a>
+              <span>/</span> AI-Disclosure Dossier
+            </p>
+            <h1>AI-Disclosure Dossier</h1>
+            <p>
+              Every homework ships a <strong>dossier</strong> — a short, fixed-form disclosure
+              of how you used AI. It does two jobs: it keeps grading fast, and it makes your AI
+              use <em>visible and accountable</em> (which models, what you asked, roughly what
+              it cost, and <strong>at least one non-trivial mistake you caught</strong>).
+            </p>
+          </header>
+
+          <section class="content-section" id="grading">
+            <h2>How it is graded</h2>
+            <p>Two passes, and the first is mechanical:</p>
+            <ol>
+              <li>
+                Run <code>./check_dossier.sh DOSSIER.md</code> (or
+                <code>DOSSIER_LITE.md</code>) in your repo.
+                <strong>Red = the dossier is ungraded, full stop</strong> — it enforces the
+                form and the length caps.
+              </li>
+              <li>
+                Green → the grader reads your <em>reasoning</em>: does the named mistake cite
+                real evidence (a probe value, a diagnostic, a failing test) rather than vibes?
+              </li>
+            </ol>
+            <p>
+              You run the <strong>same checker the grader runs</strong> —
+              <a href="downloads/check_dossier.sh" download><code>check_dossier.sh</code></a>
+              ships in every starter repo.
+            </p>
+            <p>
+              The dossier is the <em>capped reflection</em>. The unabridged record behind it
+              is your
+              <a href="course/assessments/transcripts/index.html">AI transcripts</a>,
+              submitted with the same homework — the dossier says what you learned, the
+              transcripts show the work.
+            </p>
+          </section>
+
+          <section class="content-section" id="templates">
+            <h2>Templates</h2>
+            <p>
+              Download the form your homework calls for, fill it in, and commit it at the root
+              of your homework repo. Both are also seeded in every starter repo — these copies
+              are the authoritative version if the two ever disagree.
+            </p>
+            <ul class="template-list">
+              <li>
+                <a href="downloads/DOSSIER_LITE.md" download><strong>DOSSIER_LITE.md</strong></a>
+                — thin homeworks (HW1, HW3, HW4). Three fields, capped at
+                <strong>10 content lines total</strong>.
+              </li>
+              <li>
+                <a href="downloads/DOSSIER.md" download><strong>DOSSIER.md</strong></a>
+                — heavy homeworks (HW2, HW5, HW6). Five fields; the <em>mistake</em> field caps
+                at <strong>5</strong> content lines and <em>what I’d pin next time</em> at
+                <strong>2</strong>.
+              </li>
+              <li>
+                <a href="downloads/check_dossier.sh" download><strong>check_dossier.sh</strong></a>
+                — the checker itself, if you need to re-download it.
+              </li>
+            </ul>
+            <aside class="notice">
+              A <strong>content line</strong> is a non-empty line you write inside a field —
+              headings, <code>&lt;!-- hint --&gt;</code> lines, and blank lines don’t count.
+              Two things fail the check more often than anything else: leaving a
+              <code>(your entry)</code> placeholder in place, and retyping a heading by hand.
+              The checker matches headings byte-for-byte, em dash and arrow included, so edit
+              around them rather than retyping them.
+            </aside>
+          </section>
+
+          <section class="content-section" id="sample">
+            <h2>Worked sample</h2>
+            <div class="sample">
+              <p>⚠ PLACEHOLDER — invented sample content, not final.</p>
+              <p><strong>Models used:</strong> <code>gemma4:e4b</code> (local), ~3k tokens.</p>
+              <p>
+                <strong>One mistake I caught:</strong> the generated
+                <code>trapezoid()</code> returned <code>0.0</code> for
+                <code>n &lt;= 0</code> instead of signalling an error — a
+                <strong>silent sentinel</strong>. My probe with <code>n = 0</code> returned
+                <code>0.0</code> with no diagnostic; I changed it to throw
+                <code>std::invalid_argument</code> and added a test that expects the throw.
+              </p>
+            </div>
+            <p class="caption">
+              <em>
+                (Every string above is invented for the skeleton — the real sample is seeded
+                from the Module-1 harvest.)
+              </em>
+            </p>
+          </section>
+        </article>
+      </main>
+
+      <aside class="course-sidebar" aria-label="Course contents">
+        <button class="sidebar-close" type="button" aria-label="Close course contents">×</button>
+        <nav id="course-navigation"></nav>
+      </aside>
+    </div>
+
+    <footer>
+      <div>
+        <strong>ISC5305</strong>
+        <span>Agentic Scientific C++</span>
+      </div>
+      <p>© 2026 Florida State University</p>
+      <a href="#main-content">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
